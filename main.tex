@@ -1,0 +1,2868 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Conference Booklet
+% LaTeX Template
+% Version 1.0 (22/12/2019)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Authors:
+% Maxime Lucas (ml.maximelucas@gmail.com) 
+% Pau Clusella
+% Modifications for LaTeX Templates by Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% GNU General Public License v3.0
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+	openany, % Allow chapters to start on odd and even pages
+	parskip=full, % Large space between paragraphs
+	12pt, % Default font size
+	a4paper, % Paper size, use letterpaper for US letter size
+]{conferencebooklet} % Custom class defining the style and layout of the template
+
+%----------------------------------------------------------------------------------------
+
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1, T2A]{fontenc}
+\usepackage{enumitem}
+\usepackage{scalerel}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{nicematrix}
+\usepackage{amssymb}
+\usepackage{xtab}
+\usepackage{tabularray, ragged2e}
+% \DefTblrTemplate{caption}{default}{}
+% \SetTblrInner[tblr,longtblr]{rowsep=0pt}
+% \RenewDocumentCommand\TblrAlignLeft{}{\RaggedRight}
+
+\newcommand{\ab}[1]{\textcolor{blue}{#1}}
+\newcommand\smallbull{\scaleobj{0.7}{\blacksquare}}
+\newcommand\itema{\item[\textcolor{case_blue}{$\smallbull$}]}
+
+\definecolor{case_blue}{RGB}{0, 120, 174}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	 COVER PAGE
+%----------------------------------------------------------------------------------------
+
+\includepdf{images/Frontpage.pdf} % The cover for the booklet is included as a whole-page image, it can be a PDF or an image file but must be the same dimensions as the paper size
+
+%----------------------------------------------------------------------------------------
+%	 INFORMATION/COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+\thispagestyle{empty} % Suppress headers and footers on this page
+
+~\vfill % Push text down
+
+\begin{center}
+    \begin{tabular}{cc}
+    	\includegraphics[width=0.2\textwidth]{images/qr/case.pdf} \hspace{20mm} & \includegraphics[width=0.2\textwidth]{images/qr/infovaya.pdf}
+    \end{tabular}
+\end{center}
+
+\begin{center}	
+    The source code for this handbook can be found at \url{https://github.com/nicomignoni/case24-booklet}. \\ This template originates from \url{LaTeXTemplates.com} and is based on the one at  \url{https://github.com/maximelucas/AMCOS\_booklet}
+\end{center}
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	 TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\tableofcontents
+
+%----------------------------------------------------------------------------------------
+%	 ABOUT CONFERENCE
+%----------------------------------------------------------------------------------------
+\chapter{Welcome Message}
+On behalf of the Organizing Committee, it is our great pleasure to extend a warm welcome to all participants attending the \textit{IEEE 20th International Conference on Automation Science and Engineering (CASE 2024)}, taking place in charming Puglia, Italy, from August 28 – September 1, 2024. As one of the flagship conferences of the IEEE Robotics \& Automation Society, CASE is a prestigious international platform for researchers and practitioners to present and discuss their cutting-edge work in the automation field. We are delighted to host this significant event in Puglia, an idyllic, sun-kissed region on the Adriatic Sea coast, known for its rich history, vibrant culture, and warm hospitality.
+
+CASE 2024 brings together various activities, including plenary and keynote sessions, contributed paper sessions, workshops, engaging industry panel discussions, and several social events. The conference will focus on the theme "Automation 5.0: Automation Everywhere for Better and Smarter Living" and will cover a wide range of topics such as Systems, Automation, Control Theory, Autonomous Systems, Discrete Event Systems, Smart Cities, Robotics, Building Automation, Smart Mobility, Information and Communication Technologies, and Factory 4.0.
+
+This year marks a milestone in CASE's history as we celebrate the 20th anniversary of this conference. Since its first edition in 2005 in Edmonton, Alberta, Canada, CASE has become a cornerstone event in the automation community, fostering innovation, collaboration, and knowledge exchange. We invite you to commemorate this special anniversary with celebratory activities.
+
+CASE 2024 is already a resounding success, drawing more than 900 participants from around the globe and more than 20 industrial, scientific, and institutional sponsors, making this conference an outstanding event. We received an overwhelming number of submissions from more than 50 countries. The conference saw a 28\% increase in regular paper submissions and a 67\% increase in special session paper submissions compared to last year. The conference received 44 special session proposals, marking a 29\% increase from the previous year. In total, 721 regular and special session papers were submitted, of which 544 were accepted. Additionally, we received 133 presentation-only papers, including 48 RAL/T-ASE/T-RO papers. Lastly, CASE 2024 received 17 workshop proposals of extremely high quality.
+
+This year, we introduced a Call for Application Video for the first time, receiving more than 80 submissions. In line with our commitment to diversity and inclusion, CASE 2024 also featured a new Call for Diversity and Inclusion Activities, encouraging proposals that broaden participation in automation science and engineering and encompass various dimensions of diversity.
+
+Besides the traditional awards such as the \textit{Best Conference Paper Award},\textit{ Best Application Paper Award}, \textit{Best Student Paper Award}, and the Best Healthcare Automation Paper Award, we are proud to present for the second time the \textit{Peter Luh Memorial Best Paper Award for Young Researcher}, which has now become an official IEEE award. This award was established in honor of Professor Peter Luh's dedicated service to raising the profile of automation and supporting young researchers early in their careers. This year, the conference also established the \textit{Best Short Paper Award} and the \textit{Best Application Video Award}.
+
+Several opportunities were available this year to participants. RAS established the traditional Travel Support, Social Media Ambassador, and IDEA Travel Support. This year, we introduced several new opportunities. We sent out a call for Student Volunteers, providing 15 students from all around the globe with the opportunity to participate in the conference for free. 
+Furthermore, we are thrilled to introduce the RAS Member Support Program (MSP) for CASE for the first time. This program aims to provide financial support to members who contribute to activities aligned with the RAS mission. The MSP offers a significant discount on registration fees. Additionally, we are pleased to offer onsite childcare support to facilitate parents' participation, with discounted options for IEEE RAS members.
+
+We extend our heartfelt gratitude to the Authors, Reviewers, Conference Editorial Board, Steering Committee, Organizing Committee, and volunteers whose dedication and hard work have made CASE 2024 possible. 
+
+Thank you for joining us in Bari for CASE2024. We look forward to a vibrant and enriching conference experience and to seeing the innovative contributions that will shape the future of automation.
+
+\textit{On behalf of the Organising Committee of IEEE CASE 2024}
+
+
+\begin{tabular}{wc{50mm}wc{50mm}wc{50mm}}
+    \multicolumn{1}{c}{\includegraphics[width=0.2\textwidth]{images/people/dotoli-circle.png}} & 
+    \multicolumn{1}{c}{\includegraphics[width=0.2\textwidth]{images/people/sun-circle.png}} & 
+    \multicolumn{1}{c}{\includegraphics[width=0.2\textwidth]{images/people/seatzu-circle.png}} \\
+    Mariagrazia DOTOLI & Yu SUN & Carla SEATZU \\
+    \textit{General Chair} & \textit{General Co-Chair} & \textit{Program Chair}
+\end{tabular}
+
+
+
+
+
+\chapter{About}
+The 2024 IEEE 20th International Conference on Automation Science and Engineering (CASE 2024) is one of the three flagship conferences of the IEEE Robotics \& Automation Society and provides a primary forum for cross-industry multidisciplinary research in automation.
+
+CASE 2024 will be held on August 28 – September 1, 2024, in charming Puglia (or Apulia), Italy. Puglia is a little slice of idyllic, sun-kissed Italia on the Adriatic Sea coast. An important economic center in Southern Italy, it is also a bridge between West and East with a multicultural, open, and friendly community.
+
+The conference will focus on Automation 5.0: automation everywhere for better and smarter living and will include tutorials and workshops, a technical program of presentations, keynote lectures, and social events. The conference will cover a wide range of topics on Systems, Automation, Control theory, Autonomous Systems, Discrete Event Systems, Smart Cities, Robotics, Building Automation, Smart Mobility, Information and Communication Technologies, and Factory 4.0.
+
+\section{History of CASE: Celebrating 20 Years of Innovation and Progress in Automation}
+The Conference on Automation Science and Engineering (CASE) is an influential annual event organized by the IEEE Robotics and Automation Society. Since its establishment in Edmonton 2005, CASE has provided a dedicated platform for researchers, academics, and industry professionals to share and discuss advances in automation science and engineering. This initiative arose from the recognition of the increasing importance of automation in various industrial and research domains. In its early years, CASE focused on foundational topics such as control systems, robotics, discrete event systems, and manufacturing automation. The conference aimed to bridge the gap between theoretical advancements and practical applications, fostering interdisciplinary collaboration and innovation. This approach quickly garnered attention and the conference grew in prominence, attracting a global audience eager to explore the latest developments in automation.
+
+Between 2011 and 2015, CASE broadened its thematic scope to include emerging areas such as biomedical and sustainable automation, service robotics, and smart systems. This period marked the conference’s expansion in terms of both subject and geographic reach. By rotating its location globally between America, Asia, and Europe, CASE reflected its international significance and fostered greater diversity in participation. Additionally, the conference placed a stronger emphasis on workshops, special sessions, and industry panels, enhancing opportunities for networking and collaborative research. This focus on interaction and practical application helped solidify CASE’s reputation as a premier event in the field.
+
+From 2016 to the present, CASE has embraced and integrated advancements in artificial intelligence, machine learning, and the Internet of Things (IoT) into the realm of automation science and engineering. The conference has continued to promote interdisciplinary research, addressing complex challenges in various sectors such as healthcare, transportation, and energy. This era also saw CASE adapting to global circumstances, particularly the COVID-19 pandemic, by adopting virtual and hybrid formats. These adaptations ensured that the conference could continue its mission of knowledge sharing and engagement despite the challenges posed by the pandemic. Recent conferences have also placed a spotlight on sustainability and ethical considerations in automation, reflecting broader societal concerns and the need for responsible innovation.
+
+Throughout its history, CASE has significantly contributed to the body of knowledge in automation science and engineering. By publishing high-quality research and fostering a culture of innovation, CASE has built a strong community of professionals dedicated to advancing automation technologies and their applications. The conference has not only kept pace with technological advancements but has also anticipated and shaped future trends in the field. As it continues to evolve, CASE addresses new challenges and opportunities in automation, maintaining its relevance and leadership.
+
+Overall, CASE has grown from a niche event to a key global forum that shapes the future of automation. Its comprehensive and inclusive approach has ensured that it remains at the forefront of the field, driving progress and fostering a collaborative international community. The conference’s legacy of promoting interdisciplinary research, practical innovation, and ethical considerations continues to influence the direction of automation science and engineering worldwide.
+
+Since CASE 2024 is the 20th CASE conference, this anniversary will be celebrated at the conference through different events, including videos and presentations. We will hear how CASE was initiated and get short memories from the former conferences in Edmonton 2005, Shanghai 2006, Scottsdale 2007, Arlington 2008, Bangalore 2009, Toronto 2010, Trieste 2011, Seoul 2012, Madison 2013, Taipei 2014, Gothenburg 2015, Fort Worth 2016, Xi’an 2017, Munich 2018, Vancouver 2019, Hong Kong 2020, Lyon 2021, Mexico City 2022, and Auckland 2023. Some statistics will also confirm the conference's growth, for instance, the increase by a factor of seven in the number of papers from the first CASE conference to this year’s CASE in Bari.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{images/map.png}
+    % \caption{Enter Caption}
+\end{figure}
+
+\newpage
+
+\section{Organizing committee}
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{75mm}}
+            \large \textbf{General Chair} \\
+            \textbf{Mariagrazia DOTOLI} \\
+            \textit{Polytechnic of Bari} \\ \\
+            \large \textbf{General Co-Chair} \\
+            \textbf{Yu SUN} \\
+            \textit{University of Toronto} \\ \\
+            \large \textbf{Program Chair} \\
+            \textbf{Carla SEATZU} \\ 
+            \textit{University of Cagliari}  \\ \\
+            \large \textbf{Program Committee Co-Chairs} \\
+            \textbf{Dimos DIMAROGONAS} \\
+            \textit{KTH Royal Institute of Technology} \vspace{2mm} \\
+            \textbf{Bengt LENNARTSON} \\
+            \textit{Chalmers University of Technology} \vspace{2mm} \\
+            \textbf{Spyros REVELIOTIS} \\
+            \textit{Georgia Institute of Technology} \vspace{2mm} \\ 
+            \textbf{Michael Yu WANG} \\ 
+            \textit{Great Bay University} \vspace{2mm} \\
+            \textbf{Qianchuan ZHAO} \\
+            \textit{Tsinghua University} \vspace{2mm} \\ \\
+            \large \textbf{Publicity Chairs} \\
+            \textbf{Tiantian XU} \\
+            \textit{Shenzhen Institutes of Advanced Technology, CAS} \vspace{2mm} \\ 
+            \textbf{Jingang YI} \\
+            \textit{Rutgers University} \vspace{2mm} \\ \\
+            \large \textbf{Conference Treasurer} \\
+            \textbf{Raffaele CARLI} \\
+            \textit{Polytechnic of Bari} \\ \\
+            \large \textbf{Publication Chair} \\
+            \textbf{Mauro FRANCESCHELLI} \\ 
+            \textit{University of Cagliari} \\ \\
+            \large \textbf{Publication Co-Chair} \\
+            \textbf{Emmanuel DEAN} \\ 
+            \textit{Chalmers University}
+        \end{tabular}
+    } \hspace{10mm}
+    \subfloat{
+        \begin{tabular}{p{75mm}}
+            \large \textbf{Special Session Chairs} \\
+            \textbf{Kai CAI} \\
+            \textit{Osaka Metropolitan University} \\ 
+            \textbf{Raffaele CARLI} \\
+            \textit{Polytechnic of Bari} \vspace{2mm} \\
+            \textbf{Claudio SAVAGLIO} \\
+            \textit{University of Calabria} \vspace{2mm} \\
+            \textbf{Ying (Gina) TANG} \\ 
+            \textit{Rowan University} \vspace{2mm} \\
+            \textbf{Mengchu ZHOU} \\
+            \textit{New Jersey Institute of Technology}\vspace{2mm} \\ \\
+            \large \textbf{Workshop \& Tutorial Chairs} \\
+            \textbf{Maria Pia FANTI} \\
+            \textit{Polytechnic of Bari} \vspace{2mm} \\
+            \textbf{Christoforos HADJICOSTIS} \\
+            \textit{University of Cyprus} \vspace{2mm} \\
+            \textbf{Chiwoo PARK} \\
+            \textit{KTH Royal Institute of Technology} \vspace{2mm} \\
+            \textbf{Xinyu WU} \\ 
+            \textit{Shenzhen Institutes of Advanced Technology} \\ \\
+            \large \textbf{Industrial \& Exhibition Chair} \\
+            \textbf{Birgit VOGEL-HEUSER} \\ 
+            \textit{Technical University of Munich} \\ \\
+            \large \textbf{Exhibition \& Sponsorship Chair} \\
+            \textbf{Kazuhiro SAITOU} \\ 
+            \textit{University of Michigan} \\ \\
+            \large \textbf{Local Arrangement Chair} \\
+            \textbf{Paolo SCARABAGGIO} \\
+            \textit{Polytechnic of Bari} \vspace{2mm} \\ \\
+            \large \textbf{Local Arrangement Co-Chairs} \\
+            \textbf{Graziana CAVONE} \\
+            \textit{University of Rome 3} \vspace{2mm} \\
+            \textbf{Nicola EPICOCO} \\
+            \textit{Libera Università Mediterranea} \vspace{8 mm}
+        \end{tabular}
+    }
+\end{table}
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{75mm}}
+            \large \textbf{Diversity \& Inclusion Committee Chairs} \\
+            \textbf{Graziana CAVONE} \\
+            \textit{University of Rome 3} \vspace{2mm} \\
+            \textbf{Hyun-Jung KIM} \\
+            \textit{KAIST} \\ \\ 
+            \large \textbf{Website Committee Chair} \\
+            \textbf{Paolo SCARABAGGIO} \\
+            \textit{Polytechnic of Bari}
+        \end{tabular}
+    } \hspace{10mm}
+    \subfloat{
+        \begin{tabular}{p{75mm}}
+            \large \textbf{Award Committee Chair} \\
+            \textbf{Michael Yu WANG} \\
+            \textit{Great Bay University} \\ \\
+            \large \textbf{Student Activity Chair} \\
+            \textbf{Nicola MIGNONI} \\ 
+            \textit{Polytechnic of Bari} \vspace{1.5mm}
+        \end{tabular}
+    }
+\end{table}
+\vfill
+
+\section{Steering committee}
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{75mm}}
+            \textbf{Fan-Tien CHENG} (Chair) \\  
+            \textit{Nat. Cheng Kung University}  \vspace{2mm} \\
+            \textbf{Nak Young CHONG}  \\
+            \textit{Japan Advanced Inst. of Sci. and Tech.} \vspace{2mm} \\
+            \textbf{Stéphane DAUZÈRE-PÉRÈS} \\
+            \textit{MINES Saint-Etienne} \vspace{2mm}  \\    
+            \textbf{Mariagrazia DOTOLI}  \\
+            \textit{Politecnico di Bari} \vspace{2mm} \\
+            \textbf{Martin FABIAN} \\
+            \textit{Chalmers University of Tech. } \vspace{2mm} \\
+            \textbf{Maria Pia FANTI} \\
+            \textit{Politecnico di Bari} \vspace{2mm} \\
+            \textbf{Cesare FANTUZZI} \\
+            \textit{University of Modena \& Reggio Emilia} \vspace{2mm} \\ 
+            \textbf{Ken GOLDBERG} \\
+            \textit{UC Berkeley} \vspace{2mm} \\                  
+            \textbf{Xiaohong GUAN} \\
+            \textit{Xian Jiaotong University} \vspace{2mm} \\ 
+            \textbf{George Q. HUANG} \\
+            \textit{University of Hong Kong} \vspace{2mm} \\ 
+            \textbf{Qing-Shan JIA} \\
+            \textit{Tsinghua University} \vspace{2mm} \\ 
+            \textbf{Bengt LENNARTSSON} \\
+            \textit{Chalmers University of Tech.} \vspace{2mm} \\ 
+            \textbf{Jingshan LI} \\
+            \textit{University of Wisconsin-Madison} \vspace{2mm} \\
+            \textbf{Xiaoou LI} \\
+            \textit{National Polytechnic Institute of Mexico} \\
+         \end{tabular}
+    }
+    \subfloat{
+        \begin{tabular}{p{75mm}}
+            \textcolor{darkgray}{\textbf{Peter B. LUH} (\textit{in memoriam})} \\
+            \textcolor{darkgray}{\textit{University of Connecticut}} \vspace{2mm} \\ 
+            \textbf{Dan O. POPA } \\
+            \textit{University of Louisville} \vspace{2mm} \\ 
+            \textbf{Spyros REVELIOTIS} \\
+            \textit{Georgia Tech} \vspace{2mm} \\ 
+            \textbf{Kazuhiro SAITOU} \\
+            \textit{University of Michigan} \vspace{2mm} \\ 
+            \textbf{Weiming SHEN} \\
+            \textit{Western University} \vspace{2mm} \\ 
+            \textbf{Leyuan SHI} \\
+            \textit{University of Wisconsin – Madison} \vspace{2mm} \\ 
+            \textbf{Yu SUN} \\
+            \textit{University of Toronto} \vspace{2mm} \\ 
+            \textbf{Birgit VOGEL-HEUSER} \\
+            \textit{Technical University Munich} \vspace{2mm} \\ 
+            \textbf{Michael WANG} \\
+            \textit{Hong Kong University of Sci \&. Tech.} \vspace{2mm} \\ 
+            \textbf{Xiaolan XIE} \\
+            \textit{MINES Saint-Etienne} \vspace{2mm} \\ 
+            \textbf{Xun XU} \\
+            \textit{University of Auckland} \vspace{2mm} \\ 
+            \textbf{Jingang YI} \\
+            \textit{Rutgers University} \vspace{2mm} \\ 
+            \textbf{Mengchu ZHOU} \\
+            \textit{New Jersey Inst. Tech.} \vspace{2mm} \\ 
+            \\
+            \\ 
+        \end{tabular}
+    }
+\end{table}
+
+\vfill\null
+
+\section{Editorial Board}
+
+\large \textbf{Editor-in-Chief} \normalsize
+\begin{table}[h!]
+    \begin{tabular}{l}
+        Jingang	Yi 
+    \end{tabular}
+\end{table}
+
+
+\large \textbf{Editors} \normalsize
+\begin{table}[h!]
+    \begin{tabular}{p{42mm}p{46mm}p{32mm}l}
+         Houshang	Darabi	&
+         Carla	Seatzu	\\
+         Qiang	Huang  &	
+         Weihua	Sheng	\\
+         Qing-Shan	Jia	&
+         Ying	Tang \\
+         Xinyu	Liu	 &
+         Chao-Bo	Yan	
+    \end{tabular}
+\end{table}
+
+\large \textbf{Associate Editors} \normalsize
+\begin{table}[h!]
+    \begin{tabular}{llll}
+             Knut	Akesson	&
+             Zhigang	Jiang	&
+             Agostino M. Mangini	&
+             Weitian	Wang	\\
+             Mohammad	Al Janaideh	&
+             Tongdan	Jin	&
+             Lars	Moench	&
+             Yebin	Wang	\\
+             Vincent	Augusto	&
+             Feng	Ju	&
+             Umberto	Montanaro	&
+             Yongjing	Wang	\\
+             Ashis	Banerjee	&
+             Hyun-Jung	Kim	&
+             James	Morrison	&
+             Xiaochen	Xian	\\
+             Pavel	Burget	&
+             He	Kong	&
+             Tatsushi	Nishi	&
+             Xiaolei	Xie	\\
+             Zhengcai	Cao	&
+             Nan	Kong	&
+             Peng	Pan	&
+             Pengwen	Xiong	\\
+             Raffaele	Carli	&
+             Ilya	Kovalenko	&
+             Santiago	Paternain	&
+             Qingsong	Xu	\\
+             Stefano	Carpin	&
+             Guillaume J.	Laurent	&
+             Sujit	PB	&
+             Bing	Yan	\\
+             Graziana	Cavone	&
+             Hyo Kyung	Lee	&
+             Giulia	Pedrielli	&
+             Fajun	Yang	\\
+             Abdallah	Chehade	&
+             Jun-Ho	Lee	&
+             Zhi	Pei	&
+             Hui	Yang	\\
+             Heping	Chen	&
+             Sujee	Lee	&
+             Tao	Peng	&
+             Liangjing	Yang	\\
+             Kuo	Chen	&
+             Congbo	Li	&
+             Yan	Qiao	&
+             Esen	Yel	\\
+             Nan	Chen	&
+             Gaofeng	Li	&
+             Juntian	Qu	&
+             Dan	You	\\
+             Sandeep	Chinchali	&
+             Lefei	Li	&
+             Ning	Ran	&
+             Claude	Yugma	\\
+             Changsheng	Dai	&
+             Te	Li	&
+             Michele	Roccotelli	&
+             Liang	Zhang	\\
+             Diego	Deplano	&
+             Chao	Liu	&
+             Paolo	Scarabaggio	&
+             Meng	Zhang	\\
+             Dongping	Du	&
+             Gaiyun	Liu	&
+             Tony	Shi	&
+             Xi	Zhang	\\
+             Anqing	Duan	&
+             Jian	Liu	&
+             Rong	Su	&
+             Zhi-Hai	Zhang	\\
+             Gregory	Faraut	&
+             Jun	Liu	&
+             U-Xuan	Tan	&
+             Lei	Zhao	\\
+             Irene	Fassi	&
+             Xingjian	Liu	&
+             Andrea	Testa	&
+             Pai	Zheng	\\
+             Gerardo	Flores	&
+             Yuanchang	Liu	&
+             Yin	Tong	&
+             Xiang	Zhong	\\
+             Mauro	Franceschelli	&
+             Haojian	Lu	&
+             Valeria	Villani	&
+             Kunpeng	Zhu	\\
+             Xiwang	Guo	&
+             Yuqian	Lu	&
+             Holger	Voos	&
+             Qinghua	Zhu	\\
+             Yassine	Haddab	&
+             Ziyue	Ma	&
+             Di	Wang	&
+	      	\\
+             Min-Hsiung	Hung	&
+             Cristian	Mahulea	&
+             Gongming	Wang	&
+           	\\
+   \end{tabular}
+\end{table}
+
+
+\newpage
+%----------------------------------------------------------------------------------------
+%	 PARTNERS & SPONSORS
+%----------------------------------------------------------------------------------------
+
+\chapter{Partner Institutions and Sponsors}
+
+
+
+\def\sponsorscaling{0.95}
+
+\begin{multicols*}{2}
+    \section{Main Sponsors}
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/ras.png}\hspace*{\fill}
+
+    \textit{IEEE RAS (Robotics and Automation Society) is a global society within the IEEE focused on advancing the theory and practice of robotics and automation engineering and science. It supports research, development, and education in these fields, providing a platform for professionals, researchers, and students to collaborate, share knowledge, and promote technological innovation in robotics and automation.}
+
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/ieee.png}\hspace*{\fill}
+    
+    \textit{IEEE (Institute of Electrical and Electronics Engineers) is a global professional association dedicated to advancing technology for the benefit of humanity. It provides resources for professionals in electrical engineering, computing, and other technological fields, promoting innovation and excellence.} \\
+        
+    \section{Sponsors and Exhibitors}
+    
+    \subsection{Silver Sponsors}    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/intesa.pdf}\hspace*{\fill} 
+    
+    \textit{Intesa Sanpaolo, with over €422 billion in loans and €1.35 trillion in customer financial assets at the end of June 2024, is the largest banking group in Italy, with a significant international presence. It is a European leader in wealth management, with a strong focus on digital and fintech. The Group will provide €115 billion of Impact lending by 2025 to support communities and the green transition, together with a €1.5 billion program (2023-2027) to help people in need. The Bank's network of museums, the Gallerie d'Italia, hosts its owned artistic heritage and cultural projects of recognized value.} \\
+    \url{group.intesasanpaolo.com/en/newsroom} \\ 
+    \url{x.com/intesasanpaolo} \\
+    \url{linkedin.com/company/intesa-sanpaolo} \\
+    
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/minds.jpg}\hspace*{\fill}
+    \vspace{2mm} \\
+    \textit{Istituto MINDS is an Italian research organization that specializes in innovation across various fields, functioning as a social enterprise and promoting technological competitiveness through Open Innovation. It collaborates with universities and companies, offering professional training and strategic consultancy to enhance processes and support research and development.}
+    
+    \subsection{Bronze Sponsors}    
+
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/beckhoff.png}\hspace*{\fill}
+    
+    \textit{Beckhoff is a German company known for its PC-based automation solutions, integrating open automation systems for machine building, manufacturing, and building automation. The company emphasizes innovation, flexibility, and high performance in its products.} \\
+
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/e80.png}\hspace*{\fill}
+
+    \textit{E80 Group is one of the leading providers of automated intralogistics solutions, offering advanced hardware and software systems for materials handling and management. Their portfolio covers the entire process from raw material receiving to warehousing and shipping. The company's integrated solutions are designed to improve factory and distribution center efficiency, flexibility, and safety.} \\
+
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/edistribuzione.png}\hspace*{\fill}
+
+    \textit{e-distribuzione Spa is the largest electricity Distribution System Operator (DSO) in Italy, serving approximately 32 million consumers through a network of over 1.1 million kilometers. As a subsidiary of the Enel Group, it focuses on enhancing grid resilience, integrating renewable energy sources and developing smart grid technologies to improve service quality and support energy transition initiatives.}
+
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/icam.jpg}\hspace*{\fill}
+
+    \textit{ICAM, an Italian logistics company established in 1957, specializes in automated storage and retrieval systems for various industries, including industrial, retail, healthcare, and city logistics sectors. The company focuses on innovation and sustainability, offering solutions that enhance efficiency and interconnectivity within supply chains.} \\
+
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/magna.png}\hspace*{\fill}
+    
+    \textit{Magna is more than one of the world’s largest suppliers in the automotive space. Magna is a mobility technology company built to innovate, with a global, entrepreneurial-minded team of over 179,000 employees across 343 manufacturing operations and 105 product development, engineering and sales centres spanning 28 countries. With 65+ years of expertise, their ecosystem of interconnected products combined with their complete vehicle expertise uniquely positions them to advance mobility in an expanded transportation landscape. For further information about Magna (NYSE:MGA; TSX:MG), please visit \url{www.magna.com} or follow them on social.} \\
+
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/masmec.png}\hspace*{\fill}
+    
+    \textit{MASMEC is an Italian company that excels in precision engineering, particularly in the automotive and biomedical sectors. It is known for its advanced automation systems and commitment to innovation, ensuring high-quality, reliable products.} \\
+
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/meditech.jpg}\hspace*{\fill}
+
+    \textit{MedITech 4.0 - Mediterranean Competence Center 4 Innovation is the multi-regional Competence Center, selected in 2018 by the MISE among the eight centers of national importance, active in Puglia and Campania, born as a facilitator of the adoption of Industry 4.0 enabling technologies by SMEs and Public Administration and to be a tool for disseminating culture and innovation practices in the production of goods and services on the national territory, in particular in the Mediterranean basin.   Meditech counts on the collaboration of 5 Universities from Campania, 3 Universities from Puglia and 21 cutting-edge industrial players.} \\   
+
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/pal.png}\hspace*{\fill}
+    
+    \textit{Since 2004, PAL Robotics has focused on improving people's quality of life through service robotics. Their robots support domestic tasks and enhance industrial efficiency. Specializing in customizable robotic platforms, PAL Robotics introduced Europe’s first fully autonomous humanoid biped robot. Now expanding into Italy, PAL Robotics brings over two decades of expertise, contributing to EU collaborative projects and exploring opportunities for PNRR submissions. By collaborating on these initiatives, PAL Robotics aims to drive innovative research and deliver impactful results across various sectors in Italy, supporting both service industries and research institutions while pushing technological boundaries.} \\
+
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/mics.png}\hspace*{\fill}
+    
+    \textit{MICS (Made in Italy Circolare e Sostenibile) is a partnership between universities, research centers, and enterprises funded by the Italian Ministry of University and Research with support from the EU's NextGenerationEU (PNRR) program. It links businesses and research across public and private sectors, uniting their efforts. Currently, it involves three key Italian industrial sectors: Fashion, Furniture, and Factory Automation.} \\
+
+   
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/tesmec.jpg}\hspace*{\fill}
+    
+    \textit{Tesmec Group is a leader in the market of technologies for infrastructures (overhead, underground and railway networks) related to the transport of energy, data and materials, and of technologies in surface mining. Born in Italy in 1951, the Group has expanded internationally thanks to its commitment to provide innovative and technologically advanced solutions for the development of infrastructure projects in the strategic macro sectors of energy transition, digitalization and sustainability.} \\
+
+
+    \subsection{Startup Sponsor}    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/gnous.png}\hspace*{\fill}
+    
+    \textit{G-nous Tech is an Italian company specialised in the integration of advanced solutions based on collaborative robotics and Artificial Intelligence, to streamline and enhance production processes. The company is an Universal Robots Certified System Integrator.} \\
+
+    \section{Technical Sponsors and Patronages}
+
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/poliba.png}\hspace*{\fill}
+
+    \textit{Politecnico di Bari is a prestigious Italian technical university known for its engineering, architecture, and industrial design programs. It emphasizes research and innovation, preparing students for successful careers in technology and engineering.} \\
+    
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/dei.png}\hspace*{\fill}
+
+    \textit{DEI (Dipartimento di Ingegneria Elettrica e dell'Informazione) at Politecnico di Bari specializes in electrical engineering and information technology. The department is committed to cutting-edge research, high-quality education, and fostering innovation in these fields.} \\
+        
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/ras-italy.jpeg}\hspace*{\fill}
+
+    \textit{IEEE RAS (Robotics and Automation Society) Italy is a branch of IEEE dedicated to robotics and automation. It supports research, development, and education in these fields, fostering collaboration among professionals and researchers in Italy.} \\
+
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/sidra.png}\hspace*{\fill}
+
+    \textit{SIDRA (Società Italiana Docenti e Ricercatori in Automatica) is an Italian association dedicated to professors and researchers in the field of automatic control. It promotes research, education, and the dissemination of knowledge in automation and control systems. SIDRA aims to foster collaboration among academia, industry, and research institutions to advance the development and application of automatic control technologies in various sectors.} \\
+    
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/irim.png}\hspace*{\fill}
+
+    \textit{I-RIM (Istituto di Robotica e Macchine Intelligenti) is an Italian institute dedicated to robotics and intelligent machines. It focuses on research, innovation, and the development of advanced robotic technologies to improve various industries.} \\
+    
+   \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/RegionePuglia.png}\hspace*{\fill}
+
+   \textit{Regione Puglia is the regional government of the Puglia region in southern Italy. It is responsible for local administration, economic development, public services, and cultural promotion, focusing on enhancing the quality of life for its residents and fostering sustainable regional growth.} \\
+
+   \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/bari.png}\hspace*{\fill}
+
+    \textit{Città di Bari is the municipal government of Bari, Italy, responsible for local administration, public services, and urban development. It focuses on improving the quality of life for residents and fostering economic growth.} \\
+    
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/puglia.png}\hspace*{\fill}
+
+    \textit{Fondazione Puglia is a foundation that supports cultural, scientific, and social initiatives in the Puglia region of Italy. It funds projects that promote regional development, innovation, and community welfare.}
+
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/oiba.png}\hspace*{\fill}
+
+    \textit{OIBA (Ordine degli Ingegneri della Provincia di Bari) is the professional association of engineers in Bari, Italy. It supports the professional development of its members, promotes engineering excellence, and ensures adherence to ethical standards.} \\
+    
+    
+    \section{Official Carrier}
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/airline.jpg}\hspace*{\fill}
+
+    \textit{Air France-KLM is a major European airline group formed by the merger of Air France and KLM in 2004. It offers a wide range of passengers and cargo air transport services globally. The company is committed to providing high-quality service, operational efficiency, and sustainability in aviation, with a strong focus on innovation and customer experience.}
+
+\vfill\null
+\end{multicols*}
+
+
+%----------------------------------------------------------------------------------------
+%	 MAIN VENUE
+%----------------------------------------------------------------------------------------
+\chapter{Main Conference Venue}
+
+\large \textbf{Nicolaus Hotel} \normalsize \\
+ Via Cardinale Agostino Ciasca, 27, 70124 Bari BA, Italy
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.71\linewidth]{maps/planimetria-completa.pdf}
+\end{figure}
+
+
+% \begin{center}
+% 	\begin{tabular}{lll}
+% 		Gloria Cecchini & Marco Faggian &  Aleksandra Pidde \\
+% 		Rok Cestnik & R. Janis Goldschmidt &  Bastian Pietras\\
+% 		 Pau Clusella  & Marc Grau Leguia & Eero Satuvuori \\
+% 		 Nicolás Deschle & Maxime Lucas   &  Çağdaş Topçu \\
+% 		Federico Devalle  & Irene Malvestio  & Clément Zankoc
+% 	\end{tabular}
+% \end{center}
+
+%----------------------------------------------------------------------------------------
+%	 TIMETABLE
+%----------------------------------------------------------------------------------------
+
+\chapter{Timetable}
+
+\definecolor{empty}{rgb}{0.7, 0.7, 0.7}
+\definecolor{special}{RGB}{163, 211, 255}
+\definecolor{virtual}{RGB}{255, 206, 163}
+\definecolor{keynote}{RGB}{163, 255, 166}
+\definecolor{sac}{RGB}{179, 144, 114}
+
+
+Join us at the 20th International Conference on Automation Science and Engineering (CASE 2024) in Puglia (or Apulia), Italy, from August 28 to September 1, 2024. The conference will feature tutorials, workshops, technical presentations, keynote lectures, and social events, covering a wide range of topics such as Systems, Robotics, Smart Cities, and more.
+
+The detailed CASE 2024 programme including papers, paper presentations and virtual access for remote registrants can be found through the InfoVaya Conference Platform and the InfoVaya Conference App.
+
+\subsection*{Legend}
+\begin{NiceTabular}[cell-space-limits=2mm]{C{50mm}C{3mm}C{50mm}}
+    \Block[fill=special, hvlines]{}{\textbf{Special Session}} & &
+    \Block[fill=virtual, hvlines]{}{\textbf{Virtual Session}} \\ \\
+    \Block[fill=keynote, hvlines]{}{\textbf{Keynote}} & & 
+    \Block[fill=sac, hvlines]{}{\textbf{RAS SAC Social Event}}
+\end{NiceTabular}
+
+\section{Wednesday, 28 of August}
+\begin{NiceTabular}[hvlines, cell-space-limits=2mm]{C{10mm}C{20mm}C{90mm}C{20mm}}
+    9:30 11:00 &  & \Block{2-1}{\textbf{Free visit at Polytechnic University of Bari}} & \Block{6-1}{\textbf{CASE24 Summer School}} \\ 
+    11:00 13:00 & \Block{5-1}{Registration Foyer} & & \\
+    13:00 14:00 & & \Block{}{Lunch Break} & \\
+    14:00 16:00 & & \Block{}{\textbf{Technical tours at industrial companies}} & \\
+    16:00 16:30 & & \Block{}{Coffee Break} & \\
+    16:30 17:30 & & \Block{}{\textbf{Technical tours at industrial companies}} &
+\end{NiceTabular}
+
+\vfill\null
+
+\section{Thursday, 29 of August}
+\begin{NiceTabular}[hvlines, corners, cell-space-limits=2mm]{C{10mm}C{3mm}C{25mm}C{25mm}C{25mm}C{25mm}C{25mm}}
+    & & \textit{Room T1} & \textit{Room T2} & \textit{Room T3} & \textit{Room T4} & \textit{Room T5} \\
+    9:30 10:00 & \Block{8-1}{\rotate \text{Registration Foyer}} & \Block{1-5}{\textbf{Opening Plenary} \\ \textit{Plenary Room}} \\ 
+    10:00 11:00 & & \Block[fill=keynote]{1-5}{\textbf{Driving the Biological Transformation with Automation} \\ \textit{Plenary Room}} \\
+    11:00 11:30 & & \Block{1-5}{Coffe Break} \\
+    11:30 13:00 & & 
+    \Block[fill=special]{}<\small>{\textbf{Human-Robot Collaboration for Futuristic Human-Centric Smart Manufacturing I}} & 
+    \Block[fill=special]{}<\small>{\textbf{Drivers and Tools for Efficiency Improvement in Industrial and Non-Industrial Processes}} & 
+    \Block[fill=special]{}<\small>{\textbf{In-Field Digital Technologies, Robotics and AI for Sustainable Agriculture I}} & 
+    \Block[fill=special]{}<\small>{\textbf{Advancements in Intelligent Transportation Systems: Modeling, Control, and Optimization I}} &
+    \Block[fill=special]{}<\small>{\textbf{Digital Twin for Smart Engineering System Development, Operation and Optimization I}}
+    \\
+    13:00 14:00 & & \Block{1-2}{Lunch Break} & & \Block{1-3}{Conference Editorial Board Lunch} \\
+    14:00 15:30 & & \Block[fill=special]{}<\small>{\textbf{Human-Robot Collaboration for Futuristic Human-Centric Smart Manufacturing II}} & 
+    \Block[fill=special]{}<\small>{\textbf{Optimization and Distributed Control in System of Systems Engineering}} &
+    \Block[fill=special]{}<\small>{\textbf{In-Field Digital Technologies, Robotics and AI for Sustainable Agriculture II}} &
+    \Block[fill=special]{}<\small>{\textbf{Advancements in Intelligent Transportation Systems: Modeling, Control, and Optimization II}} &
+    \Block[fill=special]{}<\small>{\textbf{Digital Twin for Smart Engineering System Development, Operation and Optimization II}}
+    \\ 
+    15:30 16:00 & & \Block{1-5}{Coffe Break} \\
+    16:00 18:00 & & \Block{1-5}{\textbf{Industrial Panel \& RAS IAB Standardization Session} \\ \textit{Plenary Room}} \\ \Hline\Hline
+    \Block{}{20:00 21:00} & & \Block{1-5}{Welcome Reception} \\
+\end{NiceTabular}
+
+\vfill\null
+\newpage
+
+\textcolor{gray}{\textbf{Thursday, 29 of August - Continued}}
+
+\begin{NiceTabular}[hvlines, corners, cell-space-limits=2mm]{C{10mm}C{3mm}C{25mm}C{25mm}C{25mm}C{25mm}C{25mm}}
+    & & \textit{Room T6} & \textit{Room T7} & \textit{Room T8} & \textit{Room T9} & \textit{Room T10} \\
+    9:30 10:00 & \Block{8-1}{\rotate \text{Registration Foyer}} & \Block{1-5}{\textbf{Opening Plenary} \\ \textit{Plenary Room}} \\ 
+    10:00 11:00 & & \Block[fill=keynote]{1-5}{\textbf{Driving the Biological Transformation with Automation} \\ \textit{Plenary Room}} \\
+    11:00 11:30 & & \Block{1-5}{Coffe Break} \\
+    11:30 13:00 & & 
+    \Block{}<\small>{\textbf{Innovative Applications of AI and Automation in Industrial Scenarios}} & 
+    \Block{}<\small>{\textbf{Optimized UAV Systems}} & 
+    \Block{}<\small>{\textbf{Big-Data and Data Mining Applications}} & 
+    \Block{}<\small>{\textbf{Optimization and Automation in Logistics}} &
+    \Block{}<\small>{\textbf{Energy and Environment-Aware Automation}}
+    \\
+    13:00 14:00 & & \Block{1-2}{Lunch Break} & & \Block{1-3}{Conference Editorial Board Lunch} \\
+    14:00 15:30 & & \Block[fill=special]{}<\small>{\textbf{Safety in Autonomous Systems: From Fault Detection to Fault Prognosis}} & 
+    \Block{}<\small>{\textbf{Advanced Sensing and Control Techniques}} &
+    \Block{}<\small>{\textbf{Advancements in Autonomous Systems}} &
+    \Block{}<\small>{\textbf{Predictive Process Engineering for the Construction Industry}} &
+    \Block{}<\small>{\textbf{Robust Point Cloud Estimation}}
+    \\ 
+    15:30 16:00 & & \Block{1-5}{Coffe Break} \\
+    16:00 18:00 & & \Block[fill=empty]{}{} & \Block{}<\small>{\textbf{Emerging Technologies in Robotics and Data Integration}} &
+    \Block{}<\small>{\textbf{Formal Methods in Robotics and Automation}} & 
+    \Block{}<\small>{\textbf{Solutions for Sustainable and Resilient Systems}} &
+    \Block{}<\small>{\textbf{Optimization and Optimal Control}}
+    \\ \Hline\Hline
+    \Block{}{20:00 21:00} & & \Block{1-5}{Welcome Reception} \\
+\end{NiceTabular}
+
+\vfill\null
+\newpage
+
+\textcolor{gray}{\textbf{Thursday, 29 of August - Continued}}
+
+\begin{NiceTabular}[hvlines, corners, cell-space-limits=2mm]{C{10mm}C{3mm}C{25mm}C{25mm}C{25mm}C{25mm}}
+    & & \textit{Room T11} & \textit{Room T12} & \textit{Virtual T1} & \textit{Virtual T2} \\
+    9:30 10:00 & \Block{8-1}{\rotate \text{Registration Foyer}} & \Block{1-4}{\textbf{Opening Plenary} \\ \textit{Plenary Room}} \\ 
+    10:00 11:00 & & \Block[fill=keynote]{1-4}{\textbf{Driving the Biological Transformation with Automation} \\ \textit{Plenary Room}} \\
+    11:00 11:30 & & \Block{1-4}{Coffe Break} \\
+    11:30 13:00 & & 
+    \Block{}<\small>{\textbf{Leveraging Systems and Data for Context-Aware and Emergent Behavior}} & 
+    \Block{}<\small>{\textbf{Planning, Scheduling and Coordination}} & 
+    \Block[fill=virtual]{}<\small>{\textbf{AI and Data-Based Methods}} & 
+    \Block[fill=virtual]{}<\small>{\textbf{Automation in Construction}} 
+    \\
+    13:00 14:00 & & Lunch Break & \Block{1-3}{Conference Editorial Board Lunch} \\
+    14:00 15:30 & & \Block{}<\small>{\textbf{3D Reconstruction and Perception for Robotic Systems}} & 
+    \Block{}<\small>{\textbf{Safe and Collaborative Manipulation of Autonomous Robots}} &
+    \Block[fill=virtual]{}<\small>{\textbf{AI-Based Methods}} &
+    \Block[fill=virtual]{}<\small>{\textbf{Autonomous Agents}}
+    \\ 
+    15:30 16:00 & & \Block{1-4}{Coffe Break} \\
+    16:00 18:00 & &  \Block{}<\small>{\textbf{Advanced Techniques in AI-Driven Optimization for Industrial and Manufacturing Processes}} &
+    \Block{}<\small>{\textbf{AI-Driven Control and Optimization}} & 
+    \Block[fill=empty]{1-2}{}
+    \\ \Hline\Hline
+    \Block{}{20:00 21:00} & & \Block{1-4}{Welcome Reception} \\
+\end{NiceTabular}
+
+\vfill\null
+\newpage
+
+%------------------------------------------------
+
+\section{Friday, 30 of August}
+\begin{NiceTabular}[hvlines, corners, cell-space-limits=2mm]{C{10mm}C{18mm}C{22mm}C{22mm}C{22mm}C{22mm}C{22mm}C{3mm}}
+    & & \textit{Room T1} & \textit{Room T2} & \textit{Room T3} & \textit{Room T4} & \textit{Room T5} \\
+    9:00 10:00 & \Block{7-1}{\rotate \text{Registration Foyer}} & \Block[fill=keynote]{1-5}{\textbf{Event-Based Reinforcement Learning for Cyber-Physical Energy Systems} \\ \textit{Plenary Room}} & & & & & \Block{8-1}{\rotate \text{RAS IAB Startup/Mentor Office Hours}} \\ 
+    10:00 11:00 & & \Block[fill=special]{}<\small>{\textbf{Safe and Secure Human-Machine Interaction: A SMCS Contribution I}} & 
+    \Block[fill=special]{}<\small>{\textbf{Space Autonomy I}} & 
+    \Block[fill=special]{}<\small>{\textbf{Innovations in Robotics and Automation for Enhanced Healthcare I}} & 
+    \Block[fill=special]{}<\small>{\textbf{Emerging Data Science in Manufacturing I}} &
+    \Block[fill=special]{}<\small>{\textbf{Cognitive Manufacturing Systems I}} & \\
+    11:00 11:30 & & \Block{1-5}{Coffe Break} & \\
+    11:30 13:00 & & 
+    \Block[fill=special]{}<\small>{\textbf{Safe and Secure Human-Machine Interaction: A SMCS Contribution II}} & 
+    \Block[fill=special]{}<\small>{\textbf{Space Autonomy II}} & 
+    \Block[fill=special]{}<\small>{\textbf{Innovations in Robotics and Automation for Enhanced Healthcare II}} & 
+    \Block[fill=special]{}<\small>{\textbf{Emerging Data Science in Manufacturing II}} &
+    \Block[fill=special]{}<\small>{\textbf{Cognitive Manufacturing Systems II}} &
+    \\
+    13:00 14:00 & & \Block{1-2}{Lunch Break} & & \Block{1-3}{Woman in Engineering Luncheon} & \\
+    14:00 15:00 & & \Block{2-4}{\textbf{Awards Sessions}} & & & &
+    \Block[fill=special]{2-1}<\small>{\textbf{Industrial Foundation Models and Applications in Smart Manufacturing}} &
+    \\ 
+    15:00 15:30 & & & & & & & \\ 
+    15:30 16:30 & \Block{1-1}<\small>{\textbf{TASE Senior Editorial Board Meeting}} & \Block{3-5}{\textbf{Sightseeing Tour}} & & & & & \\ 
+    16:30 17:30 & \Block{1-1}<\small>{\textbf{TASE Editorial Board Meeting}}  & & & & & \\
+    17:30 20:00 & & & & & &  \\
+    \Block{}{20:00 21:00} & & \Block{1-5}{Gala Dinner}
+\end{NiceTabular}
+
+\vfill\null
+\newpage
+
+\textcolor{gray}{\textbf{Friday, 30 of August - Continued}}
+
+\begin{NiceTabular}[hvlines, corners, cell-space-limits=2mm]{C{10mm}C{18mm}C{22mm}C{22mm}C{22mm}C{20mm}C{20mm}C{3mm}}
+    & & \textit{Room T6} & \textit{Room T7} & \textit{Room T8} & \textit{Room T9} & \textit{Room T10} \\
+    9:00 10:00 & \Block{7-1}{\rotate \text{Registration Foyer}} & \Block[fill=keynote]{1-5}{\textbf{Event-Based Reinforcement Learning for} \\ \textbf{Cyber-Physical Energy Systems} \\ \textit{Plenary Room}} & & & & & \Block{8-1}{\rotate \text{RAS IAB Startup/Mentor Office Hours}} \\ 
+    10:00 11:00 & & \Block[fill=special]{}<\small>{\textbf{Advances in Intelligent Healthcare Management I}} & 
+    \Block[fill=special]{}<\small>{\textbf{Assembly Lines in Circulation}} & 
+    \Block{}<\small>{\textbf{Reinforcement Learning}} & 
+    \Block{}<\small>{\textbf{Factory Automation}} &
+    \Block{}<\small>{\textbf{Discrete Event Dynamic Automation Systems}}  \\
+    11:00 11:30 & & \Block{1-5}{Coffe Break} \\
+    11:30 13:00 & & 
+    \Block[fill=special]{}<\small>{\textbf{Advances in Intelligent Healthcare Management II}} & 
+    \Block[fill=special]{}<\small>{\textbf{Identification and Control of Complex Systems}} & 
+    \Block{}<\small>{\textbf{Advanced Optimization Techniques}} & 
+    \Block{}<\small>{\textbf{Advancements in Aerial Robotics}} &
+    \Block{}<\small>{\textbf{Collaborative Robots in Manufacturing}}
+    \\
+    13:00 14:00 & & \Block{1-2}{Lunch Break} & & \Block{1-3}{Woman in Engineering Luncheon} \\
+    14:00 15:00 & & \Block[fill=special]{2-1}<\small>{\textbf{Advances in Intelligent Healthcare Management III}} & \Block{2-1}<\small>{\textbf{Reinforcement Learning for Autonomous Driving and Robot Control}} & \Block{2-1}<\small>{\textbf{Control and Path Planning Strategies for Mobile Robot Systems}} & \Block{2-1}<\small>{\textbf{Character- \\ ization and Prediction of Printed Products}} & \Block{2-1}<\small>{\textbf{Predictive Control and Dynamic Modeling}} \\
+    15:00 15:30 & & & & & & & \\ 
+    15:30 16:30 & \Block{1-1}<\small>{\textbf{TASE Senior Editorial Board Meeting}} & \Block{3-5}{\textbf{Sightseeing Tour}} & & & & & \\ 
+    16:30 17:30 & \Block{1-1}<\small>{\textbf{TASE Editorial Board Meeting}}  & & & & & \\
+    17:30 20:00 & & & & & &  \\
+    \Block{}{20:00 21:00} & & \Block{1-5}{Gala Dinner}
+\end{NiceTabular}
+
+\vfill\null
+\newpage
+
+\textcolor{gray}{\textbf{Friday, 30 of August - Continued}}
+
+\begin{NiceTabular}[hvlines, corners, cell-space-limits=2mm]{C{10mm}C{18mm}C{27mm}C{27mm}C{27mm}C{27mm}C{3mm}}
+    & & \textit{Room T11} & \textit{Room T12} & \textit{Virtual T1} & \textit{Virtual T2} \\
+    9:00 10:00 & \Block{7-1}{\rotate \text{Registration Foyer}} & \Block[fill=keynote]{1-4}{\textbf{Event-Based Reinforcement Learning for} \\ \textbf{Cyber-Physical Energy Systems} \\ \textit{Plenary Room}} & & & & \Block{8-1}{\rotate \text{RAS IAB Startup/Mentor Office Hours}} \\ 
+    10:00 11:00 & & 
+    \Block{}<\small>{\textbf{Innovative Design and Control Techniques in Robotics and Actuation Systems}} & 
+    \Block{}<\small>{\textbf{Detection, Trust, and Adaptive Systems}} & 
+    \Block[fill=empty]{1-2}{} & \\
+    11:00 11:30 & & \Block{1-4}{Coffe Break} \\
+    11:30 13:00 & & 
+    \Block{}<\small>{\textbf{Machine Learning Applications in Robotics, Analytics, and Simulation}} & 
+    \Block{}<\small>{\textbf{Neural Networks and Deep Network Physics}} & 
+    \Block[fill=virtual]{}<\small>{\textbf{Computer Vision in Automation and Manifacturing}} & \Block[fill=virtual]{}<\small>{\textbf{Machine Learning}} \\
+    13:00 14:00 & & Lunch Break & \Block{1-3}{Woman in Engineering Luncheon} \\
+    14:00 15:00 & & \Block{2-1}<\small>{\textbf{Learning and Coordination Strategies in Multi-Agent and Autonomous Systems}} & 
+    \Block{2-1}<\small>{\textbf{Robotics System for Teleoperation and Segmentation}} &
+    \Block[fill=virtual]{2-1}<\small>{\textbf{Deep Learning in Robotics and Automation}} &
+    \Block[fill=virtual]{2-1}<\small>{\textbf{Optimization and Optimal Control}}
+    \\ 
+    15:00 15:30 & & & & & & \\ 
+    15:30 16:30 & \Block{1-1}<\small>{\textbf{TASE Senior Editorial Board Meeting}} & \Block{3-4}{\textbf{Sightseeing Tour}} \\ 
+    16:30 17:30 & \Block{1-1}<\small>{\textbf{TASE Editorial Board Meeting}} \\
+    17:30 20:00 & & & &   \\
+    \Block{}{20:00 21:00} & & \Block{1-4}{Gala Dinner}
+\end{NiceTabular}
+
+\vfill\null
+
+\section{Saturday, 31 of August}
+
+\begin{NiceTabular}[hvlines, corners, cell-space-limits=2mm]{C{10mm}C{3mm}C{25mm}C{25mm}C{25mm}C{25mm}C{25mm}}
+    & & \textit{Room T1} & \textit{Room T2} & \textit{Room T3} & \textit{Room T4} & \textit{Room T5} \\
+    9:00 10:00 & \Block{8-1}{\rotate \text{Registration Foyer}} & \Block[fill=keynote]{1-5}<\small>{\textbf{Machine Learning Methods for Real-Time Robot Control with Theoretical Guarantees} \\ \textit{Plenary Room}} \\ 
+    10:00 11:00 & & 
+    \Block[fill=empty]{}{} & 
+    \Block[fill=special]{}<\small>{\textbf{Novel Planning and Control Approaches for Semiconductor Manufacturing I}} & 
+    \Block[fill=special]{}<\small>{\textbf{Machine Learning for Optimization in Automation I}} & 
+    \Block[fill=special]{}<\small>{\textbf{Autonomous Systems for Agriculture and Horticulture I}} &
+    \Block[fill=special]{}<\small>{\textbf{AI Enabled Discrete Event Dynamic Systems I}}
+    \\
+    11:00 11:30 & & \Block{1-5}{Coffe Break} \\
+    11:30 13:00 & & 
+    \Block[fill=special]{}<\small>{\textbf{Energy Communities: Optimization and Control for Sustainability}} & 
+    \Block[fill=special]{}<\small>{\textbf{Novel Planning and Control Approaches for Semiconductor Manufacturing II}} & 
+    \Block[fill=special]{}<\small>{\textbf{Machine Learning for Optimization in Automation II}} & 
+    \Block[fill=special]{}<\small>{\textbf{Autonomous Systems for Agriculture and Horticulture II}} &
+    \Block[fill=special]{}<\small>{\textbf{AI Enabled Discrete Event Dynamic Systems II}}
+    \\
+    13:00 14:00 & & \Block{}{Lunch Break} & \Block[fill=sac]{1-2}{RAS SAC Lunch with Leaders} & & \Block{1-2}{RAS TC Automation Cluster \\ Lunch} \\
+    14:00 15:30 & & \Block[fill=special]{}<\small>{\textbf{Intelligent Operation, Maintenance, and Scheduling in Complex Systems}} & 
+    \Block{}<\small>{\textbf{Diagnosis and Fault Detection}} &
+    \Block[fill=special]{}<\small>{\textbf{Machine Learning for Optimization in Automation III}} &
+    \Block[fill=special]{}<\small>{\textbf{Autonomous Systems for Agriculture and Horticulture III}} &
+    \Block{}<\small>{\textbf{Automated Sample Processing}}
+    \\ 
+    15:30 16:00 & & \Block{1-5}{Coffe Break} \\
+    16:00 17:30 & & 
+    \Block{}<\small>{\textbf{Motion and Path Planning}} & 
+    \Block{}<\small>{\textbf{Deep Learning Applications and Innovations in Robotics and Automation}} & 
+    \Block{}<\small>{\textbf{Advanced Control and Modeling Techniques for Robotic Systems}} & 
+    \Block{}<\small>{\textbf{Human-Robot Collaboration}} &
+    \Block{}<\small>{\textbf{Design and Control of Quadrotor UAVs}}
+    \\ \Hline\Hline
+    19:30 20:00 & \Block{3-1}{} & \Block{1-5}{CASE @20 / TASE @20} \\
+    \Block{}{20:00 21:00} & & \Block{1-5}{Farewell Reception} \\
+    21:00 & & \Block[fill=sac]{1-5}{RAS SAC Social Hour}
+\end{NiceTabular}
+
+\vfill\null
+\newpage
+
+\textcolor{gray}{\textbf{Saturday, 31 of August - Continued}}
+
+\begin{NiceTabular}[hvlines, corners, cell-space-limits=2mm]{C{10mm}C{3mm}C{25mm}C{25mm}C{26mm}C{25mm}C{25mm}}
+    & & \textit{Room T6} & \textit{Room T7} & \textit{Room T8} & \textit{Room T9} & \textit{Room T10} \\
+    9:00 10:00 & \Block{8-1}{\rotate \text{Registration Foyer}} & \Block[fill=keynote]{1-5}<\small>{\textbf{Machine Learning Methods for Real-Time Robot Control with Theoretical Guarantees} \\ \textit{Plenary Room}} \\ 
+    10:00 11:00 & & 
+    \Block[fill=special]{}<\small>{\textbf{Cyber-Physical Manufacturing for Small Batch Customization I}} & 
+    \Block[fill=special]{}<\small>{\textbf{Collaborative Robot-Enabled Advanced Manufacturing in the Context of Industry 5.0 I}} & 
+    \Block[fill=special]{}<\small>{\textbf{Advancements in Modeling, Scheduling, and Control for Autonomous Manufacturing I}} & 
+    \Block[fill=special]{}<\small>{\textbf{Smart and Sustainable Manufacturing I}} &
+    \Block[fill=special]{}<\small>{\textbf{Decision and Control Techniques for Autonomous Systems I}}
+    \\
+    11:00 11:30 & & \Block{1-5}{Coffe Break} \\
+    11:30 13:00 & & 
+    \Block[fill=special]{}<\small>{\textbf{Cyber-Physical Manufacturing for Small Batch Customization II}} & 
+    \Block[fill=special]{}<\small>{\textbf{Collaborative Robot-Enabled Advanced Manufacturing in the Context of Industry 5.0 II}} & 
+    \Block[fill=special]{}<\small>{\textbf{Advancements in Modeling, Scheduling, and Control for Autonomous Manufacturing II}} & 
+    \Block[fill=special]{}<\small>{\textbf{Smart and Sustainable Manufacturing II}} &
+    \Block[fill=special]{}<\small>{\textbf{Decision and Control Techniques for Autonomous Systems II}}
+    \\
+    13:00 14:00 & & \Block{}{Lunch Break} & \Block[fill=sac]{1-2}{RAS SAC Lunch with Leaders} & & \Block{1-2}{RAS TC Automation Cluster \\ Lunch} \\
+    14:00 15:30 & & \Block[fill=special]{}<\small>{\textbf{Cyber-Physical Manufacturing for Small Batch Customization III}} & 
+    \Block{}<\small>{\textbf{Collaborative Robots and Motion Control}} &
+    \Block[fill=special]{}<\small>{\textbf{Advancements in Modeling, Scheduling, and Control for Autonomous Manufacturing III}} &
+    \Block[fill=special]{}<\small>{\textbf{Smart and Sustainable Manufacturing III}} &
+    \Block{}<\small>{\textbf{Navigation, Manipulation, and Task Planning}}
+    \\ 
+    15:30 16:00 & & \Block{1-5}{Coffe Break} \\
+    16:00 17:30 & & 
+    \Block{}<\small>{\textbf{Machine Learning in Robotics and Automation}} & 
+    \Block{}<\small>{\textbf{Robotic Control and Motion Planning}} & 
+    \Block{}<\small>{\textbf{Automation at Micro-Nano Scales}} & 
+    \Block{}<\small>{\textbf{Human-Robot Interaction in Workplace and Mobility}} &
+    \Block{}<\small>{\textbf{Control and Safety Mechanisms for Construction}}
+    \\ \Hline\Hline
+    19:30 20:00 & \Block{3-1}{} & \Block{1-5}{CASE @20 / TASE @20} \\
+    \Block{}{20:00 21:00} & & \Block[t]{1-5}{Farewell Reception} \\
+    21:00 & & \Block[fill=sac]{1-5}{RAS SAC Social Hour}
+\end{NiceTabular}
+
+\vfill\null
+
+\textcolor{gray}{\textbf{Saturday, 31 of August - Continued}}
+
+\begin{NiceTabular}[hvlines, corners, cell-space-limits=2mm]{C{10mm}C{3mm}C{30mm}C{30mm}C{30mm}C{30mm}}
+    & & \textit{Room T11} & \textit{Room T12} & \textit{Virtual T1} & \textit{Virtual T2} \\
+    9:30 10:00 & \Block{8-1}{\rotate \text{Registration Foyer}} & \Block[fill=keynote]{1-4}<\small>{\textbf{Machine Learning Methods for Real-Time Robot Control with Theoretical Guarantees} \\ \textit{Plenary Room}} \\ 
+    10:00 11:00 & & 
+    \Block[fill=special]{}<\small>{\textbf{Digital Twin in Smart Construction I}} & 
+    \Block{}<\small>{\textbf{Human Gait Reconstruction}} & 
+    \Block[fill=empty]{1-2}{} 
+    \\
+    11:00 11:30 & & \Block{1-4}<\small>{Coffe Break} \\
+    11:30 13:00 & & 
+    \Block[fill=special]{}<\small>{\textbf{Digital Twin in Smart Construction II}} & 
+    \Block{}<\small>{\textbf{Dynamics, Control, and Security in Multi-Agent Systems}} & 
+    \Block[fill=virtual]{}<\small>{\textbf{Planning, Scheduling and Coordination}} & 
+    \Block[fill=virtual]{}<\small>{\textbf{Innovative Manufacturing and Automation}} 
+    \\
+    13:00 14:00 & & \Block{}{Lunch Break} & \Block[fill=sac]{}{RAS SAC Lunch with Leaders} & \Block{1-2}{RAS TC Automation Cluster \\ Lunch} \\
+    14:00 15:30 & & \Block{}<\small>{\textbf{Digital Twin in Intelligent Manufacturing}} & 
+    \Block{}<\small>{\textbf{Innovative Visual and Gesture-Based Control Techniques}} &
+    \Block[fill=virtual]{}<\small>{\textbf{Factory Automation}} &
+    \Block[fill=virtual]{}<\small>{\textbf{Automation for Industrial Applications}}
+    \\ 
+    15:30 16:00 & & \Block{1-4}{Coffe Break} \\
+    16:00 18:00 & &  \Block{}<\small>{\textbf{Logistics and Intelligent Transportation}} &
+    \Block{}<\small>{\textbf{Defect Detection and Anomaly Detection in Deformable and Online Adaptive Products}} & 
+    \Block[fill=virtual]{}<\small>{\textbf{Robotics}} & \Block[fill=virtual]{}<\small>{\textbf{Motion Control}}
+    \\ \Hline\Hline
+    19:30 20:00 & & \Block{1-4}{CASE @20 / TASE @20} \\
+    \Block{}{20:00 21:00} & \Block{3-1}{} & \Block{1-4}{Farewell Reception} \\
+    21:00 & & \Block[fill=sac]{1-4}{RAS Social Hour}
+\end{NiceTabular}
+
+\newpage 
+
+\section{Sunday, 1 of September}
+\begin{NiceTabular}[hvlines, corners, cell-space-limits=2mm]{C{10mm}C{3mm}C{20mm}C{30mm}C{30mm}C{45mm}}
+    & & \textit{Room T1} & \textit{Room T2} & \textit{Room T3} & \textit{Room T4} \\
+    9:30 10:00 & \Block{8-1}{\rotate \text{Registration Foyer}} & \Block[fill=keynote]{1-4}<\small>{\textbf{Measuring and enhancing
+    network resilience: metrics, learning, and defense strategies} \\ \textit{Plenary Room}} \\ 
+    10:00 11:00 & & 
+    \Block{}<\small>{\textbf{AURA - Acceptance and trUst of Robots in Automation 5.0 I}} & 
+    \Block{}<\small>{\textbf{3rd International Conference on Visual Pattern Extraction and Recognition for Cultural Heritage Understanding (VIPERC 2024) I}} & 
+    \Block{}<\small>{\textbf{Control, Cooperation, and Resilience in Rural Energy Communities I}} & 
+    \Block{}<\small>{\textbf{Human Movement Understanding, Whole-Body Control, and Human-Robot Interfaces in Manufacturing, Healthcare, and Underwater Exploration I}}
+    \\
+    11:00 11:30 & & \Block{1-4}<\small>{Coffe Break} \\
+    11:30 13:00 & & 
+    \Block{}<\small>{\textbf{AURA - Acceptance and trUst of Robots in Automation 5.0 II}} & 
+    \Block{}<\small>{\textbf{3rd International Conference on Visual Pattern Extraction and Recognition for Cultural Heritage Understanding (VIPERC 2024) II}} & 
+    \Block{}<\small>{\textbf{Control, Cooperation, and Resilience in Rural Energy Communities II}} & 
+    \Block{}<\small>{\textbf{Human Movement Understanding, Whole-Body Control, and Human-Robot Interfaces in Manufacturing, Healthcare, and Underwater Exploration II}} 
+    \\
+    13:00 14:00 & & \Block{1-4}{Lunch Break} & & & \\
+    14:00 15:30 & & \Block{}<\small>{\textbf{AURA - Acceptance and trUst of Robots in Automation 5.0 III}} & 
+    \Block{}<\small>{\textbf{3rd International Conference on Visual Pattern Extraction and Recognition for Cultural Heritage Understanding (VIPERC 2024) III}} &
+    \Block{}<\small>{\textbf{French-Italian Workshop on Robotics 4.0}} &
+    \Block{}<\small>{\textbf{Empowering the Future Workforce: Design Thinking Workshop with LEGO®}}
+    \\ 
+    15:30 16:00 & & \Block{1-4}{Coffe Break} \\
+    16:00 18:00 & &  \Block{}<\small>{\textbf{AURA - Acceptance and trUst of Robots in Automation 5.0 IV}} &
+    \Block{}<\small>{\textbf{3rd International Conference on Visual Pattern Extraction and Recognition for Cultural Heritage Understanding (VIPERC 2024) IV}} & 
+    \Block{}<\small>{\textbf{French-Italian Workshop on Robotics 4.0}} & \Block[fill=empty]{}<\small>{\textbf{}}
+\end{NiceTabular}
+
+\begin{NiceTabular}[hvlines, corners, cell-space-limits=2mm]{C{10mm}C{3mm}C{20mm}C{30mm}C{30mm}C{45mm}}
+    & & \textit{Room T5} & \textit{Room T6} & \textit{Room T7} & \textit{Room T8} \\
+    9:30 10:00 & \Block{8-1}{\rotate \text{Registration Foyer}} & \Block[fill=keynote]{1-4}<\small>{\textbf{Measuring and enhancing
+    network resilience: metrics, learning, and defense strategies} \\ \textit{Plenary Room}} \\ 
+    10:00 11:00 & & 
+    \Block{}<\small>{\textbf{Machine Learning for Automation I}} & 
+    \Block{}<\small>{\textbf{Machine-learning (ML)-driven Digital Twin (DT) Construction for Advanced Manufacturing I}} & 
+    \Block{}<\small>{\textbf{Industrial exoskeletons: market demands, open challenges and research opportunities I}} & 
+    \Block{}<\small>{\textbf{Empowering Human-Robot Collaboration: shared autonomy, system transparency, and trustworthiness I}}
+    \\
+    11:00 11:30 & & \Block{1-4}<\small>{Coffe Break} \\
+    11:30 13:00 & & 
+    \Block{}<\small>{\textbf{Machine Learning for Automation II}} & 
+    \Block{}<\small>{\textbf{Machine-learning (ML)-driven Digital Twin (DT) Construction for Advanced Manufacturing II}} & 
+    \Block{}<\small>{\textbf{Industrial exoskeletons: market demands, open challenges and research opportunities II}} & 
+    \Block{}<\small>{\textbf{Empowering Human-Robot Collaboration: shared autonomy, system transparency, and trustworthiness II}}
+    \\
+    13:00 14:00 & & \Block{1-4}{Lunch Break} & & & \\
+    14:00 15:30 & & \Block{}<\small>{\textbf{Machine Learning for Automation III}} & 
+    \Block[fill=empty]{}<\small>{} &
+    \Block{}<\small>{\textbf{Industrial exoskeletons: market demands, open challenges and research opportunities III}} &
+    \Block[fill=empty]{}<\small>{\textbf{}}
+    \\ 
+    15:30 16:00 & & \Block{1-4}{Coffe Break} \\
+    16:00 18:00 & &  \Block{}<\small>{\textbf{Machine Learning for Automation IV}} &
+    \Block[fill=empty]{}<\small>{} & 
+    \Block{}<\small>{\textbf{Industrial exoskeletons: market demands, open challenges and research opportunities IV}} & \Block[fill=empty]{}<\small>{}
+\end{NiceTabular}
+
+\begin{NiceTabular}[hvlines, corners, cell-space-limits=2mm]{C{10mm}C{3mm}C{20mm}C{40mm}C{30mm}C{35mm}}
+    & & \textit{Room T9} & \textit{Room T10} & \textit{Room T11} & \textit{Room T12} \\
+    9:30 10:00 & \Block{8-1}{\rotate \text{Registration Foyer}} & \Block[fill=keynote]{1-4}<\small>{\textbf{Measuring and enhancing
+    network resilience: metrics, learning, and defense strategies} \\ \textit{Plenary Room}} \\ 
+    10:00 11:00 & & 
+    \Block{}<\small>{\textbf{Soft Robots and Wearables for flexible and interactive automation I}} & 
+    \Block{}<\small>{\textbf{Constrained control of vehicle formations in industry and intelligent transportation systems: from model-based to data-driven solutions I}} & 
+    \Block{}<\small>{\textbf{Translating Manufacturing Control and Automation Research to Practice: Examples, Challenges, and Opportunities I}} & 
+    \Block{}<\small>{\textbf{Enhancing Human-Centered Automation: Mastering resilient Multi-Robot Systems with Dynamic Collaboration and Heterogeneity I}}
+    \\
+    11:00 11:30 & & \Block{1-4}<\small>{Coffe Break} \\
+    11:30 13:00 & & 
+    \Block{}<\small>{\textbf{Soft Robots and Wearables for flexible and interactive automation II}} & 
+    \Block{}<\small>{\textbf{Constrained control of vehicle formations in industry and intelligent transportation systems: from model-based to data-driven solutions II}} & 
+    \Block{}<\small>{\textbf{Translating Manufacturing Control and Automation Research to Practice: Examples, Challenges, and Opportunities II}} & 
+    \Block{}<\small>{\textbf{Enhancing Human-Centered Automation: Mastering resilient Multi-Robot Systems with Dynamic Collaboration and Heterogeneity II}}
+    \\
+    13:00 14:00 & & \Block{1-4}{Lunch Break} & & & \\
+    14:00 15:30 & & \Block[fill=empty]{}<\small>{} & 
+    \Block{}<\small>{\textbf{Constrained control of vehicle formations in industry and intelligent transportation systems: from model-based to data-driven solutions III}} & 
+    \Block[fill=empty]{}<\small>{} & 
+    \Block[fill=empty]{}<\small>{}
+    \\ 
+    15:30 16:00 & & \Block{1-4}{Coffe Break} \\
+    % 16:00 18:00 & &  \Block{}<\small>{\textbf{}} & 
+    % \Block{}<\small>{\textbf{}} & 
+    % \Block{}<\small>{\textbf{}} & 
+    % \Block{}<\small>{\textbf{}}
+\end{NiceTabular}
+
+%----------------------------------------------------------------------------------------
+%	 KEYNOTE SPEAKERS
+%----------------------------------------------------------------------------------------
+\chapter{Keynote Presentations}
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{75mm}}
+            \multicolumn{1}{c}{\includegraphics[width=0.35\linewidth]{keynote-speakers/ansgar_kriwet.png}} \vspace{3mm} \\
+            \large \textbf{Ansgar Kriwet} \\ \\
+            \textit{After studying mechanical engineering at the University of Aachen, Dr. Kriwet spent several years as research associate at The Institute for Machine Tools and Production Technology of the TU Berlin, followed by the Institute for Management and Technology IMT in Berlin. In 1995 Dr. Kriwet joined Festo and contributed significantly to the development of the new founded Cybernetic division. His mission here was the transformation of the component business of Festo to a solution business, creating customer advantages through ease of integration. In 2009 Dr. Kriwet was appointed to the Management Board of the Festo AG for Region and Sales Europe, followed by the responsibility for Global Sales in 2013. Since September 2022 Dr. Kriwet has been the Chief Technology Officer of Festo SE \& Co. KG and is responsible for Global Research and Development in this area. He is driving the integration of electronic controls, sensors, communication, and Software with traditional mechanical motion components, enhancing customer value through data by reducing energy consumption.}
+        \end{tabular}
+    }
+    \subfloat{
+        \begin{tabular}{p{75mm}}
+            \parbox{75mm}{\section{Driving the biological transformation with automation}} \\ \\
+            \large \textit{Thursday, August 29th, 2024} \\ \\
+            \textbf{Abstract}: \\
+            Economists have been predicting the end of linear growth for some time. Further development towards a circular economy is the next big goal, as it offers new growth potential. And nature is an excellent role model in this regard because it knows no waste. For Festo, integrating biology as a basis for ongoing development in automation is particularly promising. It can be used to transform a biological cell into the smallest factory of the future.
+
+            To do this, we need to understand the biological processes and create optimal conditions to grow or manipulate different organisms. By using AI and quantum sensors to analyze the state of growth, we can then control and optimally monitor various parameters.
+            
+            The aim of our work in this area is to create solutions that are real alternatives to today’s established chemical processes, which often require a lot of heat and pressure and are mostly based on fossil raw materials.
+            
+             Using the example of photobioreactors for the production of algae and the conversion of hydrogen into alternative energy sources, Festo shows how automation can contribute to a significant increase in efficiency in the future and thus to sustainable business.
+        \end{tabular}
+    }
+\end{table}
+
+%------------------------------------------------
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{75mm}}
+            \multicolumn{1}{c}{\includegraphics[width=0.35\linewidth]{keynote-speakers/qing-shan-jia.png}} \vspace{3mm} \\
+            \large \textbf{Qing-Shan Jia} \\ \\
+            \textit{Qing-Shan Jia received his B.S. in automation in 2002 and Ph.D. in control science and engineering in 2006 from Tsinghua University, Beijing. He is a Full Professor and chair of the Institute of Systems Engineering at the Center for Intelligent and Networked Systems (CFINS), Department of Automation, Tsinghua University. He was vice dean of Tsinghua GIX (2016-2019) and vice chair of the Department of Automation (2015-2018). He completed a postdoc at Harvard University in 2006 and held visiting scholar positions at HKUST (2010) and MIT (2013). His research focuses on data-driven, statistical, and computational approaches for design and decision-making in manufacturing, energy, autonomous systems, and smart cities. He is the executive editor-in-chief of Results in Control and Optimization and an associate editor of Science China Information Sciences. Previously, he was an associate editor for several IEEE journals and served on various IEEE and IFAC committees. He is the founding chair of the IEEE RAS Technical Committee on Machine Learning for Automation (since 2023) and a member of the Chinese Automation Association's committees on Control Theory and Information Security of Industrial Systems.}
+        \end{tabular}
+    }
+    \subfloat{
+        \begin{tabular}{p{75mm}}
+            \parbox{75mm}{\section{Event-based reinforcement learning for cyber-physical energy systems, smart buildings, smart grids and smart cities}} \\ \\
+            \large \textit{Friday, August 30th, 2024} \\ \\
+            \textbf{Abstract}: \\
+            Cyber physical energy system (CPES) is where information and energy merges together to improve the overall system performance including economic, comfort, and safety aspects. Artificial intelligence which are enabled by internet of things (IoT), big data, and cloud computing, has a big role in the optimization of CPES. 
+            
+            In this talk, we focus on event-based reinforcement learning (eRL) which makes decisions according to events instead of states. 
+            This method provides a scalable solution for large-scale multi-stage decision making problem in which an accurate model may not be available. The performance of this method will be demonstrated by examples in smart buildings, smart micro-grid of buildings, and smart cities, and in particular on the problem of stochastic matching between the renewable power generation and the uncertain charging demand from the plug-in electric vehicles (PHEVs) in a city. 
+            
+            We will also discuss extensions of this method to distributed optimization. We hope this work sheds light to the optimization of CPES.
+        \end{tabular}
+    }
+\end{table}
+
+%------------------------------------------------
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{75mm}}
+            \multicolumn{1}{c}{\includegraphics[width=0.35\linewidth]{keynote-speakers/aude-billard.png}} \vspace{3mm} \\
+            \large \textbf{Aude Billard} \\ \\
+            \textit{Aude Billard is a full professor and head of the LASA laboratory at the School of Engineering, Swiss Institute of Technology Lausanne (EPFL). She is also the Associate Dean for Education at EPFL. Prof. Billard is President of the IEEE Robotics and Automation Society, director of the ELLIS Robot Learning Program, and co-director of the Robot Learning Foundation. She leads the Innovation Booster Robotics, funded by Innosuisse. She holds a BSc and MSc in Physics from EPFL and a PhD in Artificial Intelligence from the University of Edinburgh. Prof. Billard is an IEEE Fellow and has received numerous awards, including the Intel Corporation Teaching award, the Swiss National Science Foundation career award, and the IEEE RAS Distinguished Service Award. She has been a plenary speaker at major conferences and has served on organizing committees for numerous international robotics conferences. Her research focuses on machine learning and robotics, particularly on fast and reactive control and safe human-robot interaction. Her work has received several best conference paper awards, the King-Sun Fu Memorial Award for the best IEEE Transactions on Robotics paper, and has been featured in media outlets like BBC, IEEE Spectrum, and Wired.}
+        \end{tabular}
+    }
+    \subfloat{
+        \begin{tabular}{p{75mm}}
+            \parbox{75mm}{\section{Machine learning methods for real-time robot  control with theoretical guarantees}} \\ \\
+            \large \textit{Saturday, August 31st , 2024} \\ \\
+            \textbf{Abstract}: \\
+            Deployment of robots in human-inhabited environments requires allowing robots to react rapidly, robustly and safely to changes in the environment. Recent advances in machine learning to analyze and model a variety of data offer powerful solutions for real-time control. For these techniques to be efficiently deployed and endorsed, they must be accompanied with explicit guarantees on the learned model.
+            
+            This talk will give an overview of a variety of methods to endow robots with the necessary reactivity to adapt their path at time-critical situations. The learned control laws are accompanied by theoretical guarantees for stability and boundedness. Paucity of data is a reality in many robotics tasks. 
+            
+            I will present methods by which robots can learn control laws from only a handful of examples, while generalizing to the entire state space. I will present a variety of applications, from dynamic manipulation in interaction with humans to reactive navigation in crowded pedestrian environments.
+        \end{tabular}
+    }
+\end{table}
+
+%------------------------------------------------
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{75mm}}
+            \multicolumn{1}{c}{\includegraphics[width=0.35\linewidth]{keynote-speakers/sonia-diaz-martinez.png}} \vspace{3mm} \\
+            \large \textbf{Sonia Diaz Martinez} \\ \\
+            \textit{Sonia Martínez is a Full Professor and Jacobs Faculty Scholar at the Department of Mechanical and Aerospace Engineering, University of California, San Diego. She received her B.S. from Universidad de Zaragoza in 1997 and her Ph.D. in Engineering Mathematics from Universidad Carlos III de Madrid in 2002. She was a Visiting Assistant Professor at the Technical University of Catalonia and held postdoctoral positions at the University of Illinois, Urbana-Champaign, and the University of California, Santa Barbara. She joined UC San Diego in 2006, becoming an Associate Professor in 2010 and a Full Professor in 2014. Her research interests include networked control systems, multi-agent systems, and nonlinear control theory, with applications in robotics and cyber-physical systems. Prof. Martínez has received the Best Student Paper award at the 2002 IEEE Conference on Decision and Control, the NSF CAREER Award in 2007, and two Control Systems Magazine Outstanding Paper Awards (2008, 2021). She was named an IEEE Fellow in 2018 and is a Senior Editor of Automatica and Editor-in-Chief of the IEEE Open Journal of Control Systems.}
+        \end{tabular}
+    }
+    \subfloat{
+        \begin{tabular}{p{75mm}}
+            \parbox{75mm}{\section{Measuring and enhancing network resilience: metrics, learning, and defense strategies}} \\ \\
+            \large \textit{Sunday, September 1st , 2024} \\ \\
+            \textbf{Abstract}: \\
+            Resilience, understood as the ability of a network to carry out ist goals under adversarial attacks and unexpected failures, is critical for autonomy. Despite important advances in the design of distributed coordination and decision-making algorithms, multi-agent networks have proven fragile to targeted attacks. Novel theories and tools are therefore needed to guarantee resiliency of these systems, being the development of notions and techniques that characterize network critical resilience. 
+            
+            However, obtaining such characterizations is difficult as resilience and performance are a complex function of the network’s and adversary’s capabilities, knowledge, resources, and the network interconnection structure. At the same time, we also need novel design methodologies that can protect multi-agent networks and adaptively manage their interconnection over time to achieve performance guarantees.  
+            
+            In this talk, we present our recent progress in these directions including algorithmic methods for metric computation, data-driven algorithms for multi-agent learning, and defense strategies.
+        \end{tabular}
+    }
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	 SPECIAL SESSIONS
+%----------------------------------------------------------------------------------------
+\chapter{Special Sessions}
+
+\begin{multicols*}{2}
+    \input{special-sessions.tex}
+\end{multicols*}
+
+%----------------------------------------------------------------------------------------
+%	 WORKSHOPS
+%----------------------------------------------------------------------------------------
+\chapter{Workshops}
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{37mm}}
+            \Large \parbox{37mm}{\section{AURA: Acceptance and trUst of Robots in Automation 5.0}} \\ \\
+            \textit{} \\
+            \large \textbf{Organizers} \vspace{2mm} \\ 
+            \textbf{Silvia Proia} \\
+            \textit{University of Modena and Reggio Emilia} \vspace{2mm} \\
+            \textbf{Lorenzo Sabattini} \\
+            \textit{University of Modena and Reggio Emilia} \vspace{2mm} \\
+            \textbf{Valeria Villani} \\
+            \textit{University of Modena and Reggio Emilia} \vspace{2mm} \\
+            \textbf{Raﬀaele Carli} \\
+            \textit{Polytechnic of Bari} \vspace{2mm} \\
+            \textbf{Graziana Cavone} \\
+            \textit{University Roma Tre}
+        \end{tabular}
+    }
+    \subfloat{
+        \begin{tabular}{p{113mm}}
+            Automation 5.0 represents the cutting-edge evolution of automation technologies within the framework of Industry 5.0, a revolution that further integrates humans into the automation chain. Central to the success of Automation 5.0 is the acceptance and trust of robots by humans. The social acceptance concept, defined as “an individual’s psychological state with regard to his or her voluntary or intended use of a particular technology” is crucial in Automation 5.0 for seamless robots’ integration into various domains, including manufacturing, healthcare, and transportation. Trust is another fundamental aspect of the HRC in Automation 5.0, enabling humans to rely on robots to perform tasks safely, accurately, and efficiently. Humans should feel confident that robots will operate within defined parameters and respond appropriately to unexpected situations. The aim of this workshop is to bridge roboticists from academia and industry to exchange insights and perspectives on fostering acceptance and trust of robots in Automation 5.0. In the discussion, particular attention will be devoted to the measurement of the key factors influencing human acceptance of robots in industrial settings, i.e., perceived occupational safety, physical ergonomics, cognitive ergonomics, efficiency, design, and privacy. In fact, certain metrics for these factors have already been established in existing literature, while others necessitate additional efforts for quantification and integration into robot design and control. Therefore, the perspectives of experts in this field will be presented aiming at delineating the path for the definition of appropriate functional and non-functional requirements for robots’ acceptance to be integrated into their architecture and design.
+        \end{tabular}
+    }
+\end{table}
+
+%------------------------------------------------
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{60mm}}
+            \Large \parbox{60mm}{\section{Constrained Control of Vehicle Formations in Industry and Intelligent Transportation Systems: from Model-based to Data-driven Solutions}} \\ \\
+            \large \textbf{Organizers} \vspace{2mm} \\ 
+            \textbf{Walter Lucia} \\
+            \textit{Concordia University} \vspace{2mm} \\
+            \textbf{MengChu Zhou} \\
+            \textit{New Jersey Institute of Technology} \vspace{2mm} \\
+            \textbf{Giancarlo Fortino} \\
+            \textit{University of Calabria} \vspace{2mm} \\
+            \textbf{Giuseppe Franzè} \\
+            \textit{University of Calabria}
+        \end{tabular}
+    }
+    \subfloat{
+        \begin{tabular}{p{90mm}}
+            This workshop delves into the contemporary challenges of autonomous multi-vehicle systems, particularly focusing on formation control and collision avoidance for multi-agent configurations in the context of Smart Cities and Industry 5.0. The increasing attention to these issues arises from the successful deployment of Unmanned Vehicles (UVs) in Industry 5.0 and Intelligent Transportation Systems. Designing fully autonomous vehicle systems requires addressing key requirements such as precise signal tracking, goal attainment for each vehicle, coordination through formation control tools, and ensuring collision avoidance. However, existing approaches often lack efficiency when overlooking physical limitations in vehicle modelling, compromising their effectiveness in scenarios where geometrical constraints and saturation effects are crucial. The workshop aims to analyze recent advancements in constrained control for multi-vehicle systems, exploring how traditional constrained control techniques and data-driven approaches can be employed independently or in tandem to devise innovative and efficient hybrid control architectures for autonomous multi-vehicle systems moving in shared environments.
+        \end{tabular}
+    }
+\end{table}
+
+%------------------------------------------------
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{114mm}}
+            The greatest difficulty in implementing RECs is related to connecting the multidisciplinary nature of all the social elements with technological perspectives. These characteristics put in evidence the opportunity, presented by RECs, aimed at defining economic, social, and technical policies to determine changes in a macro sector by acting at a local level. The technical impact of a single REC makes the overall system globally smart while however each local community retain its independence. The starting point of any technical approaches for the construction of RECs must necessarily be linked to the characterization of the reference area, studying the possibility of creating independent or autonomous realities exploiting the territorial resources. The technological development must exploit all possible elements of a REC and all possible optimization and control architectures. The plant technology and energy conversion system must be characterized, on the basis of the available resource. Therefore, the impact of new technologies of RECs in the energy sector is indispensable since it is possible to reduce emissions and reach technological development and to solve energy congestion through incentives and the promotion of energy policies. RECs are also implementable in low energy efficiency contexts. Promoting innovative and replicable models of local and rural community management through hi-tech tools, new collaborations with local authorities and institutions is, therefore, necessary to step forward to a carbon-free society.
+        \end{tabular}
+    }
+    \subfloat{
+        \begin{tabular}{p{36mm}}
+            \Large \parbox{36mm}{\section{Control, Cooperation, and Resilience in Rural Energy Communities}} \\ \\
+            \large \textbf{Organizers} \vspace{2mm} \\ 
+            \textbf{Raffaele Carli} \\
+            \textit{Polytechnic of Bari} \vspace{2mm} \\
+            \textbf{Mariagrazia Dotoli} \\
+            \textit{Polytechnic of Bari} \vspace{2mm} \\
+            \textbf{Roberto Sacile} \\
+            \textit{University of Genoa} \vspace{2mm} \\
+            \textbf{Enrico Zero} \\
+            \textit{University of Genoa}
+        \end{tabular}
+    }
+\end{table}
+
+%------------------------------------------------
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{50mm}}
+            \parbox{50mm}{\section{Empowering Human-Robot Collaboration: Shared Autonomy, System Transparency, and Trustworthiness}} \\ \\
+            \large \textbf{Organizers} \vspace{2mm} \\ 
+            \textbf{Marco Faroni} \\
+            \textit{Polytechnic University of Milan} \vspace{2mm} \\
+            \textbf{Martina Lippi} \\
+            \textit{Roma Tre University } \vspace{2mm} \\
+            \textbf{Alessandro Umbrico} \\
+            \textit{Institute of Cognitive Sciences and Technologies} \vspace{2mm} \\
+            \textbf{Alessandro Marino} \\
+            \textit{University of Cassino and Southern Lazio} \vspace{2mm} \\
+            \textbf{Cesare Tonola} \\
+            \textit{University of Brescia}
+        \end{tabular}
+    }
+    \subfloat{
+        \begin{tabular}{p{100mm}}
+            The ultimate aspiration of collaborative robotics is to bring robots to a level where they can interact with people in a manner that mirrors human-human interaction. This involves establishing a paradigm of shared autonomy, where robots neither function independently nor act subserviently to humans. Instead, they actively collaborate with human operators and coexist seamlessly, complementing each other’s strengths and capabilities to achieve common goals.  In this shared autonomy framework, when humans can actively participate in robots’ decisional processes and understand the causal relationships of actions, they are more likely to trust robots’ autonomous behaviors and collaborate effectively. In turn, when robots leverage shared abstraction models of human reasoning and the context they are operating in, they can better adapt and act proactively to achieve complex objectives. As humans understand robots’ actions, they can also provide feedback to refine the shared abstraction models, promoting continuous adaptation and improvement of the collaboration process. Establishing this interconnection is key to building a trustworthy collaboration and unlocking the full potential of human-robot synergy. This workshop aims to bring together different expertise and perspectives in designing, deploying, and evaluating shared autonomy and transparent collaboration to create a common ground for efficient and safe human-robot collaboration.
+        \end{tabular}
+    }
+\end{table}
+
+%------------------------------------------------
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{90mm}}
+            Regularly lifting heavy loads is considered one of the main factors contributing to work-related musculoskeletal disorders. Industrial exoskeletons have recently seen great developments, with dozens of devices literally invading the market. Robotic exoskeletons have the potential to protect the musculoskeletal system from injury and to reduce the occurrence of chronic musculoskeletal disorders. At the same time, we can observe that the adoption rate is still rather low, suggesting that despite the potential of occupational exoskeletons, there is still room for improvement.  This workshop can be seen as a crossing point between the views of industry and academia in the development of exoskeleton technologies. The main objective of this workshop is to make academia aware of market demands and requirements and to make the industry aware of existing solutions and research opportunities. The workshop also includes live demonstrations from both industrial and academic sides, with the main objective of soliciting discussions.
+        \end{tabular}
+    }
+    \subfloat{
+        \begin{tabular}{p{60mm}}
+            \parbox{60mm}{\section{Industrial Exoskeletons: Market Demands, Open Challenges and Research Opportunities}} \\ \\
+            \large \textbf{Organizers} \vspace{2mm} \\ 
+            \textbf{Andrea Calanca} \\
+            \textit{University of Verona} \vspace{2mm} \\
+            \textbf{Mohamed Irfan Refai} \\
+            \textit{University of Twente} \vspace{2mm} \\
+            \textbf{Francesco Pascucci} \\
+            \textit{University of Verona} \vspace{2mm} \\
+            \textbf{Eldison Dimo} \\
+            \textit{University of Verona}
+        \end{tabular}
+    }
+\end{table}
+
+%------------------------------------------------
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{30mm}}
+            \parbox{30mm}{\section{Empowering the Future Workforce: Design Thinking Workshop with LEGO®}} \\ \\
+            \large \textbf{Organizers} \vspace{2mm} \\ 
+            \textbf{Pía Torres} \\
+            \textit{Di Tella University} \vspace{2mm} \\
+            \textbf{Romina Fairbairn} \\
+            \textit{Di Tella University} 
+        \end{tabular}
+    }
+    \subfloat{
+        \begin{tabular}{p{120mm}}
+            This workshop empowers engineers and scientists to thrive in the robotics and automation design revolution. Through hands-on activities with LEGO®s, you’ll gain the skills to design innovative and impactful solutions. 
+            
+            1. Design Thinking:
+            \begin{itemize}
+                \item  User-Centric Design: Develop empathy to users, understanding their needs and challenges.
+                \item  Creative Problem-Solving: Learn to brainstorm and explore solutions for real-world challenges.
+                \item  Rapid Prototyping: Craft physical prototypes to quickly test and refine your ideas.
+                \item  Collaborative Innovation: Master teamwork skills essential for successful development in multidisciplinary teams. 
+            \end{itemize}
+        
+            2. 21st Century Skills:
+            \begin{itemize}
+                \item Critical Thinking \& Problem-Solving: Sharpen your ability to analyze complex challenges and develop innovative solutions.
+                \item  Data-Driven Decisions: Learn to leverage data to make informed choices for your designs.
+                \item  Effective Communication: Master communication and collaboration within diverse teams with varying technical backgrounds. 
+            \end{itemize}
+            
+            3. Human-Centered Development:
+            \begin{itemize}
+                \item Designing with Purpose: Explore the power of technology to address critical humanitarian challenges and improve lives.
+                \item Ethical Considerations: Integrate ethical principles and social responsibility into your designs.
+                \item Building Sustainable Solutions: Consider the environmental and social impact of your designs.  Become a leader in the future of work. Design solutions that address real-world needs, aligning with United Nations Sustainable Development Goals and promoting positive humanitarian impact.
+            \end{itemize}
+        \end{tabular}
+    }
+\end{table}
+
+%------------------------------------------------
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{40mm}}
+            \parbox{40mm}{\section{Enhancing Human-Centered Automation: Mastering Resilient Multi-Robot Systems with Dynamic Collaboration and Heterogeneity}} \\ \\
+            \large \textbf{Organizers} \vspace{2mm} \\ 
+            \textbf{Natalia Ogorelysheva} \\
+            \textit{Fraunhofer Institute for Material flow and Logistics} \vspace{2mm} \\
+            \textbf{Julia Freytag} \\
+            \textit{Fraunhofer Institute for Material flow and Logistics} 
+        \end{tabular}
+    }
+    \subfloat{
+        \begin{tabular}{p{110mm}}
+            The current utilization of multi-robot system (MRS) in industry and logistics has delineated a clear demarcation between tasks performed by humans and those by robots, often lacking efficient collaboration and adaptability. Despite their ability to perform numerous tasks, MRS are not sufficiently flexible, particularly in resilient and adaptive operations, which are crucial for dynamic industrial environments. As technology advances, the potential of MRS expands, yet the complexity and challenges within these systems also escalate. This underscores the need for a transformative approach in how these systems are integrated and managed to enhance not only their functionality but also their interaction within human-centric environments. One of the foremost challenges lies in developing systems that are not only resilient, adaptive, dynamic, and scalable but are also designed to transition from human support to automation in a modular fashion as technology and algorithms advance. This modular transition is designed to facilitate a seamless switch between robot and human operation. This includes using teleoperation as a method to bridge the gap when a situation demands human intervention or insight. The system should be equipped with decision-making capabilities to autonomously determine when it requires human assistance, depending on the complexity or unpredictability of the task at hand. Additionally, the system can learn from these human-led interventions, gradually incorporating human strategies and solutions into its algorithms to enhance future autonomous operations, thereby improving adaptability and resilience in dynamic environments. During the workshop, we will explore the potential to construct such systems through a smart orchestrating architecture. This architecture leverages various services in a modular manner, enhancing the flexibility of MRS and fostering a symbiotic relationship with human operators.
+        \end{tabular}
+    }
+\end{table}
+
+%------------------------------------------------
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{110mm}}
+            Recent development and practice of Robotics 4.0 technologies are getting huge momentum to improve citizens quality of life and well-being and enhance society conditions. Latest advancements delve into the progression from traditional automation to collaborative and cognitive automation, emphasizing the importance of human-robot interaction and cooperation. In this context, the proposed workshop aims at exploring the evolution of robotics and automation across different human-centric technological domains, such as manufacturing, healthcare, transportation, and household tasks, while investing the effectiveness of new solutions for helping people, improving working conditions, transferring applications and economic enhancement of research. 
+        \end{tabular}
+    }
+    \subfloat{
+        \begin{tabular}{p{40mm}}
+            \parbox{40mm}{\section{French-Italian Workshop on Robotics 4.0}} \\ \\
+            \large \textbf{Organizers} \vspace{2mm} \\ 
+            \textbf{Raffaele Carli} \\
+            \textit{Polytechnic of Bari} \vspace{2mm} \\
+            \textbf{Mariagrazia Dotoli} \\
+            \textit{Polytechnic of Bari} \vspace{2mm} \\
+            \textbf{Andrea Cherubini} \\
+            \textit{University of Montpellier}
+        \end{tabular}
+    }
+\end{table}
+
+%------------------------------------------------
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{40mm}}
+            \parbox{40mm}{\section{Human Movement Understanding, Whole-Body Control, and Human-Robot Interfaces in Manufacturing, Healthcare, and Underwater Exploration}} \\ \\
+            \large \textbf{Organizers} \vspace{2mm} \\ 
+            \textbf{Emel Demircan} \\
+            \textit{California State University Long Beach} \vspace{2mm} \\
+            \textbf{Taizo Yoshikawa} \\
+            \textit{Honda R\&D (Japan)} \vspace{2mm} \\
+            \textbf{Tadej Petric} \\
+            \textit{Jozef Stefan Institute}
+        \end{tabular}
+    }
+    \subfloat{
+        \begin{tabular}{p{110mm}}
+            Robotics research has drawn much inspiration from humans as a system: in the design of the anthropomorphic aspects of manipulators, sensors, and actuators, approaches for coordinating full body motions, and the higher-level strategies for realizing complex tasks and interacting with the external environment and other humans. Today, robotics as a field has matured to the point where methodologies developed and used in robotics may be leveraged to address research questions in many other fields, ranging from neuroscience to computer animation. Together with the tools from biomechanics, robotics enables our efforts to explore natural human motion, leading to improvements in treatments for patients with neuro-musculoskeletal disorders, and facilitating development of human inspired robots. In recent years, expectations for remotely controlled robots have increased. Progress is being made in the development of technology that allows humans to perform tasks that were previously difficult to be done manually using remote-controlled robots. There are also high expectations for the use of remote-control technology for robots operating in various environments such as underwater and space. Interface technology for remote control using 5th generation mobile communication systems is attracting attention. The main objectives of the proposed TC are: 1)Achieving natural human behavior in remote operations and enabling more sophisticated strategies in complex tasks and interaction with the external environment; 2)Estimating and predicting human movement status and promoting applications in rehabilitation, prosthetic limbs, and exoskeleton design; and 3) Development of strategies to reconstruct human behavior on artificial anthropomorphic systems.
+        \end{tabular}
+    }
+\end{table}
+
+%------------------------------------------------
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{80mm}}
+            This workshop will explore the convergence of machine learning (ML) with digital twin (DT) technology as a cornerstone for innovation in advanced manufacturing. As manufacturing moves towards and beyond Industry 4.0, the DT concept has emerged as a transformative tool for optimizing manufacturing processes and product lifecycle management. The integration of ML enables predictive maintenance, real-time monitoring, and dynamic optimization. This workshop will focus on the significance of merging ML with DT in the manufacturing sector, driving towards smarter, more efficient, and autonomous systems.
+        \end{tabular}
+    }
+    \subfloat{
+        \begin{tabular}{p{70mm}}
+            \parbox{70mm}{\section{Machine-learning-driven Digital Twin Construction for Advanced Manufacturing}} \\ \\
+            \large \textbf{Organizers} \vspace{2mm} \\ 
+            \textbf{Hyunwoong Ko} \\
+            \textit{Arizona State University} \vspace{2mm} \\
+            \textbf{Yan Lu} \\
+            \textit{The National Institute of Standards and Technology}
+        \end{tabular}
+    }
+\end{table}
+
+%------------------------------------------------
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{40mm}}
+            \parbox{40mm}{\section{Machine Learning for Automation}} \\ \\
+            \large \textbf{Organizers} \vspace{2mm} \\ 
+            \textbf{(Samuel) Qing-Shan Jia} \\
+            \textit{Tsinghua University} \vspace{2mm} \\
+            \textbf{Bing Yan} \\
+            \textit{Rochester Institute of Technology} \vspace{2mm} \\
+            \textbf{Aparna Varde} \\
+            \textit{Montclair State University} \vspace{2mm} \\
+            \textbf{Bengt Lennartson} \\
+            \textit{Chalmers University of Technology} \vspace{2mm} \\
+            \textbf{Maria Pia Fanti} \\
+            \textit{Polytechnic of Bari}
+        \end{tabular}
+    }
+    \subfloat{
+        \begin{tabular}{p{110mm}}
+            This workshop on Machine Learning for Automation (MLA) provides a unique opportunity to explore the cutting edge research and practice on how machine learning is transforming automation, and vice versa. How is ML transforming semiconductor manufacturing? Accelerating the design of next-generation batteries? Making buildings smarter? Achieving safe, green, and inclusive mobility in cities? Evolving automatic virtual metrology? And how to advance fundamental theories and algorithms in MLA practice, such as solving mixed-binary linear programming problems, combining constrained programming and satisfiability solvers, improving data efficiency and robustness, and making AI models explainable? What are the options in commercial software such as Matlab and Simulink for MLA? We provide 10 exciting talks from leading experts to address these questions. Beyond that, a poster session, a demo session, and a panel session would provide great hands-on experience and opportunities to interact with the experts in MLA. This will be a memorable full day workshop for the participants. This workshop is organized by the IEEE RAS TC on MLA, with support from TC on Logistics, TC on Semiconductor Manufacturing, TC on Smart Buildings, and TC on Digital Manufacturing and Human Machine Interaction.
+        \end{tabular}
+    }
+\end{table}
+
+%------------------------------------------------
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{70mm}}
+            This workshop unites researchers in Soft Robotics, Wearable technologies, and Automation to explore the potential of interactive, flexible soft robotic components. These components hold the key to transitioning hardware automation from structured manufacturing environments to dynamic, human-populated settings where the automation needs can continuously change. We’ll discuss use cases ranging from soft grippers and exoskeletons to collaborative manipulators and robots designed for environmental interaction. AI technologies and their synergic use with flexible-reconfigurable hardware will also be covered.
+        \end{tabular}
+    }
+    \subfloat{
+        \begin{tabular}{p{80mm}}
+            \parbox{80mm}{\section{Soft Robots and Wearables for Flexible and Interactive Automation}} \\ \\
+            \large \textbf{Organizers} \vspace{2mm} \\ 
+            \textbf{Vito Cacucciolo} \\
+            \textit{Politecnico di Bari} \vspace{2mm} \\
+            \textbf{Francesco Giorgio-Serchi} \\
+            \textit{University of Edinburgh} \vspace{2mm} \\
+            \textbf{Federico Renda} \\
+            \textit{Khalifa University} \vspace{2mm} \\
+            \textbf{Shingo Maeda} \\
+            \textit{Tokyo Institute of Technology} \vspace{2mm} 
+        \end{tabular}
+    }
+\end{table}
+
+%------------------------------------------------
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{70mm}}
+            \parbox{70mm}{\section{Translating Manufacturing Control and Automation Research to Practice: Examples, Challenges, and Opportunities}} \\ \\
+            \large \textbf{Organizers} \vspace{2mm} \\ 
+            \textbf{Efe Balta} \\
+            \textit{inspire AG} \vspace{2mm} \\
+            \textbf{Kira Barton} \\
+            \textit{University of Michigan} \vspace{2mm} \\
+            \textbf{Ilya Kovalenko} \\
+            \textit{Pennsylvania State University} \vspace{2mm} \\
+            \textbf{Wesley Oliviera} \\
+            \textit{Instituto Tecnológico de Aeronáutica} \vspace{2mm} \\
+            \textbf{Alisa Rupenyan} \\
+            \textit{Zurich University for Applied Sciences} \vspace{2mm} \\
+            \textbf{Dawn Tilbury} \\
+            \textit{University of Michigan}
+        \end{tabular}
+    }
+    \subfloat{
+        \begin{tabular}{p{80mm}}
+            Partnerships and collaborations between academia and industry are imperative for addressing many of the challenges in creating Automation 5.0. The development of sustainable tools and methods, the implementation of new shop floor automation, and the creation of intelligent control tools will require input from both academic and industry researchers. In this workshop, we will explore challenges in developing manufacturing control and automation research in practice, focusing on initiatives, barriers, and collaboration opportunities. As part of this workshop, there will be speakers from both academia and industry who will share their experiences and perspectives on establishing academic-industry relationships. Speakers with global perspectives (USA, Brazil, Switzerland, etc.) will be featured as part of the workshop. In addition, we will have an interactive breakout session and a poster session that will engage attendees and allow them to discuss the ‘best practices’ and ‘lessons learned’ from their experiences, as well as provide opportunities to establish close academic and industry partnerships.
+        \end{tabular}
+    }
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	 TECHNICAL TOUR
+%----------------------------------------------------------------------------------------
+
+\chapter{Technical Tour}
+\begin{multicols*}{2}
+    \section{Free visits at Polytechnic University of Bari}
+    \textbf{Date}: August 28 \\
+    \textbf{Time}: 09:30 – 12:00 \\
+    \textbf{Location}: Campus “Ernesto \\ Quagliariello” \\
+    \textbf{Cost}: Free \\
+    \textbf{Note}: Free transportation service is included. 
+
+    \vfill\null
+    \columnbreak
+    
+    \section{Guided technical tours at leading industrial companies}
+    \textbf{Date}: August 28 \\
+    \textbf{Time}: 12:00 – 18:00 \\
+    \textbf{Participants}: Limited to 30 \\
+    \textbf{Cost}: Fee includes transportation service and lunch.
+
+    \subsection*{Companies}
+    \includegraphics[width=0.8\linewidth]{logos/masmec.png} 
+    
+    Masmec is an Italian company that excels in precision engineering, particularly in the automotive and biomedical sectors. It is known for its advanced automation systems and commitment to innovation, ensuring high-quality, reliable products.
+    
+    \includegraphics[width=0.8\linewidth]{logos/magna.png} 
+    
+    Magna is more than one of the world’s largest suppliers in the automotive space. Magna is a mobility technology company built to innovate, with a global, entrepreneurial-minded team of over 179,000 employees across 343 manufacturing operations and 105 product development, engineering and sales centres spanning 28 countries. With 65+ years of expertise, their ecosystem of interconnected products combined with their complete vehicle expertise uniquely positions them to advance mobility in an expanded transportation landscape. For further information about Magna (NYSE:MGA; TSX:MG), please visit \url{www.magna.com} or follow them on social.
+    
+\end{multicols*}
+
+%----------------------------------------------------------------------------------------
+%	 SOCIAL EVENTS
+%----------------------------------------------------------------------------------------
+\chapter{Events}
+    \begin{multicols*}{2}
+        \begin{tabular}{p{75mm}}
+            \parbox{75mm}{\section{Welcome and Farewell Reception}} \vspace{2mm} \\
+            Welcome: \textit{29 August, 20:00 – 21:30} \\
+            Farewell: \textit{31 August, 20:00 – 21:00} \vspace{2mm} \\ 
+            \textit{Included in the (in-person) full and student registration fees}
+            \vspace{2mm} \\
+            Join us at the rooftop of Nicolaus Hotel for the Welcome and Farewell Ceremonies. You will enjoy a stunning view of the entire town while indulging in delicious typical Apulian foods. It’s a perfect setting to connect with fellow participants. \\ \\
+
+            \parbox{75mm}{\section{Gala Dinner}} \vspace{1mm} \\
+            \textit{30 August, Corte di Torrelonga, 20:00 – 21:30} \vspace{2mm} \\
+            \textit{Included in the (in-person) full and student registration fees} \vspace{2mm} \\
+            Indulge in an evening of elegance and opulence at the prestigious Villa de Grecis, an old Italian Villa — delight in fine dining, entertainment, and camaraderie within the historic walls of this enchanting venue. Transportation service is included. \\ \\ 
+
+            \parbox{75mm}{\section{Sightseeing tour of Bari}} \\
+            \textit{30 August, 15:30 – 20:00} \vspace{2mm} \\ 
+            \textit{Included in the (in-person) full and student registration fees} \vspace{2mm} \\
+            Explore the charm of Bari’s old town with a guided sightseeing tour. Transportation service is included.
+        \end{tabular}
+
+        \begin{tabular}{p{75mm}}
+             \parbox{75mm}{\section{RAS SAC Events}} \\ 
+             \parbox{75mm}{\subsection*{Lunch with Leaders}} \\
+             \textit{31 August, 13:00 – 14:00 @ Rooftop} \vspace{2mm} \\
+             \textbf{Organizer}: Nicola Mignoni \\
+             \textbf{Leaders}: Aude Billard, Bengt Lennartson, Carla Seatzu, Dawn Tilbury, Fan-Tien Cheng, Feng Ju, Laura Giarrè, Maria Pia Fanti, Mengchu Zhou, Michael Yu Wang, Qianchuan Zhao, Weiming Shen, Yu Sun
+             \vspace{2mm} \\
+             \textit{This event is reserved for students and Young Professionals} \vspace{2mm} \\
+             This free luncheon is open to students and young professional attendees offering the chance to meet and interact with Leaders of RAS and/or Industry. The event will feature informal roundtable discussions over lunch in an exclusive location, which allows participants to receive career advice, gain insight into the future, or simply engage in general conversation to get to know pioneers in the field. Don’t miss out on this chance to elevate your networking experience and make meaningful connections with figures in the world of robotics and automation. \\ \\
+
+            \parbox{75mm}{\subsection*{Social Hour}} \\
+            \textit{31 August, 21:00 – 22:00 @ Rooftop}  \vspace{2mm} \\ 
+            Join the RAS Student Activities Committee’s Social Hour to meet fellow student attendees, grab a snack and beverage and make networking easier at the conference. Attending a conference as a student can be overwhelming, particularly if you are without an advisor, lab mates, or colleagues. Attending the SAC Social Hour will give you the opportunity to connect with others, which makes it easier to engage in thoughtful conversations on the future of robotics and automation during the remainder of the conference. 
+        \end{tabular}
+    
+
+        \begin{tabular}{p{75mm}}
+            \parbox{75mm}{\section{RAS WIE Events}} \\ 
+            \parbox{75mm}{\subsection*{WIE Lunch: Automation 5.0 and Engineering for Diversity and Inclusion}} \vspace{2mm} \\
+            \textit{August 30, 13:00 - 14:00} \vspace{2mm} \\
+            \textbf{Organizers}: Graziana Cavone, Hyun-Jung Kim, Georgia Chalvatzaki, Nadia Figueroa \\
+            \textbf{Moderators}: Nadia Figueroa, Valeria Bonagura \vspace{2mm} \\
+            This event focuses on the role of Automation 5.0 in fostering diversity and inclusion in engineering. It features a panel discussion followed by round-table discussions and a buffet lunch, providing ample opportunities for networking and knowledge sharing. \vspace{2mm} \\  
+            \multicolumn{1}{c}{\includegraphics[width=0.3\textwidth]{wie/patrizia-lamberti.png}} \vspace{2mm} \\ 
+            \textit{Patrizia Lamberti -- Associate Professor of Electrotechnics at University of Salerno, Italy / Chair of the Italian WIE Affinity Group} \vspace{2mm} \\ 
+            \multicolumn{1}{c}{\includegraphics[width=0.3\textwidth]{wie/calogero-maria-oddo.png}} \vspace{2mm} \\ 
+            \textit{Calogero Maria Oddo -- Associate Professor of Industrial Bioengineering at University Sant’Anna of Pisa, Italy} 
+	\end{tabular}
+		
+	\begin{tabular}{p{75mm}}
+            \parbox{75mm}{\section{RAS IAB Event}} \\ 
+            The RAS Industrial Activities Board (IAB) is dedicated to fostering the growth of the industrial community within the IEEE Robotics and Automation Society.
+            Our mission is to enhance collaboration between industry and academia by encouraging industrial participation in current activities and initiating new actions beneficial to this community. \\
+
+            \parbox{75mm}{\subsection*{Startup/Mentor Office Hours}} \\
+            \textit{August 30, 2024 10:00 – 17:00 @ RAS Corner in the Exposition Area} \vspace{2mm} \\
+            Connect with IAB experts and mentors to gain insights and advice on your startup ventures. This is a unique opportunity to discuss your ideas, receive valuable feedback, and network with professionals in the field. \\
+
+            \parbox{75mm}{\subsection*{Coffee Break}} \\
+            \textit{August 29, 15:30 – 16:00 @ Coffee Break Area} \\
+            Join us for a relaxing coffee break where you can meet and interact with fellow conference attendees. This informal setting provides a great opportunity to network and discuss potential collaborations. \\
+
+            \parbox{75mm}{\subsection*{Industrial Panel}} \\ 
+            \textit{August 29, 16:00 – 17:00 @ Plenary Room} \vspace{2mm} \\
+            Gain insights into the latest trends and advancements in the industrial sector from leading experts. This panel will feature discussions on cutting-edge technologies and their applications in manufacturing and robotics. \vspace{2mm} \\
+            \textbf{Moderator}: Andra Keay \vspace{2mm} \\
+            \textit{\textbf{Manufacturing 5.0 @ Magna}} \vspace{2mm} \\
+            \multicolumn{1}{c}{ \includegraphics[width=0.3\textwidth]{industrial-panel/alex-zak.png}}
+        \end{tabular}
+
+        \begin{tabular}{p{75mm}}
+            \textit{Alex Zak -- Global Director, Corporate R\&D, Advanced Manufacturing \& Robotics of Magna International Inc.} \\ \\ 
+            \textit{\textbf{Enabling Industry 5.0: Automation Solutions for Automotive @ Masmec}} \vspace{2mm} \\
+            \multicolumn{1}{c}{ \includegraphics[width=0.3\textwidth]{industrial-panel/lazazzera.png}} \vspace{2mm} \\
+            \textit{Vito Lazazzera -- Innovation Director – Automotive Division, MASMEC S.p.A., Italy.} \\ \\
+            
+            \textit{\textbf{Bi-manual Collaborative and Advanced Path Planning in Humanoid Robot RoBee}} \vspace{2mm} \\
+            \multicolumn{1}{c}{ \includegraphics[width=0.3\textwidth]{industrial-panel/fabio-puglia.png}} \vspace{2mm} \\
+            \textit{Fabio Puglia -- President and co-founder of Oversonic, Besana, Italy.}
+            \\ \\
+
+            \textit{\textbf{Medium Voltage Smart Grids: Automation for Evolved Operations}} \vspace{2mm} \\
+            \multicolumn{1}{c}{ \includegraphics[width=0.3\textwidth]{industrial-panel/girardi.png}}
+        \end{tabular}
+            
+        \begin{tabular}{p{75mm}}
+            \textit{Pasquale Massimiliano Girardi -- Head of Territorial Unit Barletta-Andria-Trani, Electricity Distribution and Measurement, e-distribuzione S.p.A., Italy.}
+            \\ \\
+            
+            \parbox{75mm}{\subsection*{Session on the Process and Importance of IEEE Standardization for Automation}} \\
+            \textit{August 29, 17:00 – 18:00 @  Plenary Room} \vspace{2mm} \\
+            Introducing the opportunity to propose and to work on IEEE standards. The aim is to inform researchers why, when and how to work on such a standard and the processes required.
+            \parbox{75mm}{\subsection*{Session on the Process and Importance of IEEE Standardization for Automation}} \\
+            \textit{August 29, 17:00 – 18:00 @  Plenary Room} \vspace{2mm} \\
+            Introducing the opportunity to propose and to work on IEEE standards. The aim is to inform researchers why, when and how to work on such a standard and the processes required.
+            Standards are crucial not only for success of open automation or interfacing networked control systems as discussed in the last Automation Cluster Forum at ICRA 2024 and 2023. \vspace{2mm} \\
+            \textbf{Anchor}: Birgit Vogel-Heuser \vspace{2mm} \\
+            \textit{\textbf{IEEE Robotics and Automation Standards: Introduction and Opportunities}} \vspace{2mm} \\
+            \multicolumn{1}{c}{ \includegraphics[width=0.3\textwidth]{standardization/paulo-goncalves.png}} \vspace{2mm} \\
+            \textit{Paulo Jorge Sequeira Gonçalves -- Professor at Instituto Politécnico de Castelo Branco | Senior Researcher at IDMEC, Instituto Superior Técnico, Universidade de Lisboa}
+        \end{tabular}
+
+        \begin{tabular}{p{75mm}}
+            The IEEE Robotics and Automation Society (RAS) has been developing standards since 2011 to formally adopt and confirm best practices in robotics and automation as standards. Its main objectives are to promote: common measures and definitions in robotics and automation; measurability and comparability of robotics and automation technology; integrity, portability, and reusability of robotics and automation technology.
+            The talk will start to briefly introduce the IEEE Standards Association process to develop standards, and presents well-known success stories.
+            The second part of the talk is dedicated to the past, present, and future of the IEEE RAS standards activities. Ranging from the first ever ontological standard for robotics and automation (2015) covering core concepts in this domain, to the most recent on Robot Task Representation (2024), encompassing standards for Map Data Representation and Autonomous Robotics. Current and future efforts will also be introduced in the areas of Human Robot Interaction, Multiple Robots, and Humanoid Robots. \\ \\ 
+            
+            \textit{\textbf{From open source to your research project: Why standards matter}} \vspace{2mm} \\
+            \multicolumn{1}{c}{ \includegraphics[width=0.3\textwidth]{standardization/stefan-scherzinger.png}} \vspace{2mm} \\
+            \textit{Stefan Scherzinger -- Expert Robotic Ecosystems and Software Integration, Software \& Electronics, Research \& Development, SCHUNK SE \& Co. KG, Brackenheim-Hausen} \vspace{2mm} \\
+            Researchers in the robotics and automation fields often rely on open-source software for a variety of devices and systems as part of their scientific projects. 
+            However, this software is typically developed and maintained by small communities or individuals, which 
+        \end{tabular}
+    
+        
+        \begin{tabular}{p{75mm}}
+            poses challenges as the number of products and ecosystem interfaces continues to grow.
+            In this talk, we will explore SCHUNK’s current challenges in developing open-source gripper drivers for robotic ecosystems and motivate the use of standards to address this dilemma. \\ \\
+            
+            \textit{\textbf{Standardized data provision through digital twins (Asset Administration Shell)}} \vspace{2mm} \\
+            \multicolumn{1}{c}{ \includegraphics[width=0.3\textwidth]{standardization/ansgar-kriwet.png}} \vspace{2mm} \\
+            \textit{Ansgar Kriwet -- Festo SE \& Co. KG, Executive Board Research and Development, Esslingen} \vspace{2mm} \\
+            Interoperable and standardized data is critical to shortening time-to-market for machine manufacturers. 
+            Automated and error-free access to information across company boundaries enables data quality and simplifies machine development and factory operations. Aspects discussed are; how the optimal component and machine design can already be identified in a networked virtual environment; and how Digital Twins enable a well-understood international digital language between networked companies. Important working groups for standardized descriptions, data structures and data are for the digital twins will be mentioned. 
+        \end{tabular}
+         
+         
+         
+        
+
+         
+    \end{multicols*}
+
+%----------------------------------------------------------------------------------------
+%	 AWARDS
+%----------------------------------------------------------------------------------------
+\chapter{Awards}
+
+\begin{multicols*}{2}
+
+\textbf{Chair}: Michael Yu WANG
+
+\section{Best Conference Paper Award}
+\textbf{Chair}: Dezhen Song \\
+\textbf{Members}: Birgit Vogel-Heuser, Jingang Yi
+
+This award is given annually to the author(s) of a paper presented at the IEEE International Conference on Automation Science and Engineering (CASE) that contributed to the notable advancement in automation research: abstractions, algorithms, theory, methodologies, and models that improve efficiency, productivity, quality, and reliability of machines and systems operating in structured environments over extended periods, or that improve the explicit structuring of environments where machines and systems operate.
+
+\textbf{Finalists}: \\
+\small Accelerating Virtual Fixture Estimation for Robot Manipulation Using Reinforcement Learning and Human Demonstrations \\
+\footnotesize \textit{\textcolor{darkgray}{Diego Fernandez Prado, Konstantinos Larintzakis, Jan Irsperger, Eckehard Steinbach}}
+
+\small Semantic Behaviour Tree Learning through Kinesthetic Demonstrations for Position-Force Controlled Robotic Applications \\
+\footnotesize \textit{\textcolor{darkgray}{Lorenzo Fratini, Niccolò Lucci, Matteo Malavenda, Andrea Maria Zanchettin, Paolo Rocco}}
+
+\small Hierarchical Reinforcement Learning Based on Planning Operators \\
+\footnotesize \textit{\textcolor{darkgray}{Jing Zhang, Emmanuel Dean, Karinne Ramirez-Amaro}} 
+
+\normalsize
+
+\section{Best Application Paper Award}
+\textbf{Chair}: Lars Mönch \\
+\textbf{Members}: Feng Ju, Hyun-Jung Kim 
+
+This award is given to the author(s) of a paper presented at the IEEE International Conference on Automation Science and Engineering (CASE), recognizing outstanding applications in the field of automation.
+
+\textbf{Finalists}: \\
+\small  Multi-Agent Path Planning for Finite Horizon Tasks with Counting Time Temporal Logics \\
+\footnotesize \textit{\textcolor{darkgray}{Peng Lv, Shaoyuan Li, Xiang Yin}}
+
+\small  Chattering-Free Sliding Mode Control for Position and Attitude Tracking of a Quadrotor with a Cable-Suspended Load \\
+\footnotesize \textit{\textcolor{darkgray}{Sara Gomiero, Karl von Ellenrieder}}
+
+\small A Geometry Aware Diffusion Model for 3D Point Cloud Generation \\
+\footnotesize \textit{\textcolor{darkgray}{Ao Zhang, Zhen Shen, Qihang Fang, Jian Jian Yang, Gang Xiong, Xisong Dong}}
+
+\normalsize
+
+\section{Best Student Paper Award}
+\textbf{Chair}: Raffaele Carli \\
+\textbf{Members}: Qing-Shan Jia, Michela Robba 
+
+This award recognizes the best paper authored primarily by a student and presented by the student at the IEEE International Conference on Automation Science and Engineering (CASE). The award is supported by his academic family to honor Professor Yu-Chi (Larry) Ho, a Past President of the IEEE Robotics and Automation Council, which later became the IEEE Robotics and Automation Society.
+
+\textbf{Finalists}:
+\small A Feature Extraction Framework with Entropy on Graphs for Cross-Dataset Building Fault Detection \\
+\footnotesize \textit{\textcolor{darkgray}{Jiajing Huang, Abhidnya Patharkar, Teresa Wu, Jin Wen, Zheng O’Neill, Kasim Candan}}
+
+\small Adaptive Responses of Cancer Cells to Tumor Microenvironment Changes: An Evolutionary Model Perspective \\
+\footnotesize \textit{\textcolor{darkgray}{Chiara Romano, Alessandro Borri, Maria Domenica Di Benedetto}}
+
+\small Development of a Novel Multipurpose Robotic End Effector for Fruitlet Thinning and Fruit Harvesting of Apples \\
+\footnotesize \textit{\textcolor{darkgray}{Rahul Jangali, Benjamin John McGuinness, Shen Hin Lim, Henry Williams, Ans Qureshi, David Anthony James Smith, Bruce MacDonald, Mike Duke}}
+
+\normalsize
+
+\section{Peter Luh Memorial Best Paper Award for Young Researcher}
+\textbf{Chair}: Raffaele Carli \\
+\textbf{Members}: Qing-Shan Jia, Michela Robba 
+
+This award recognizes the best paper co-authored by a young leading researcher and presented by the researcher at the IEEE International Conference on Automation Science and Engineering (CASE).
+The award is established in honor of Professor Peter Luh’s dedicated service to raising the profile of Automation and supporting young researchers early in their career. Peter Luh was a co-founder of CASE and the founding Editor in Chief of the automation journal, Transactions on Automation Science and Engineering (T-ASE). He was also noted by many of the Robotics and Automation Society volunteers as the first person to reach out to them early in their careers and encourage them to become volunteers. For this reason, this award is specifically dedicated to young researchers holding a PhD  degree not older than five years on the last day of the month when 
+the conference is held.
+
+\textbf{Finalists}: \\
+\small An efficient parallel single surrogate objective optimization method for multi-objective black-box problem and its application in processor design \\
+\footnotesize \textit{\textcolor{darkgray}{Xiaoliang Lv, Qiaozhu Zhai, Yuhang Zhu, Jianchen Hu, Yuzhou Zhou, Xiaohong Guan}}
+
+\small Helical Trajectory Control of Quadrotor UAVs Using Fractional Order Proportional-Integral-Derivative (FOPID) Controller \\
+\footnotesize \textit{\textcolor{darkgray}{Ghulam E Mustafa Abro, Ayman M Abdallah, Mohssen E. Elshaar}}
+
+\small A Distributed Algorithm for Coordination in Energy Communities \\
+\footnotesize \textit{\textcolor{darkgray}{Riccardo Brumali, Guido Carnevale, Ruggero Carli, Giuseppe Notarstefano}} 
+
+\normalsize
+
+\section{Best Short Paper Award}
+\textbf{Chair}: Dezhen Song \\
+\textbf{Members}: Birgit Vogel-Heuser, Jingang Yi
+
+The award is given to the author(s) of a presentation-only paper or abstract presented at the IEEE International Conference on Automation Science and Engineering (CASE).
+
+\textbf{Finalists}: \\
+\small Measuring Healthcare Accessibility in Metropolitan Cities in China \\
+\footnotesize  \textit{\textcolor{darkgray}{Qing Wang, Leqi Weng, Fanyuan Ma, Jingshan Li}} 
+
+\small Data-Driven Methods for Virtual Metrology of Sheet Resistance in Physical Vapor Deposition (PVD) Process \\
+\footnotesize  \textit{\textcolor{darkgray}{Chia-Yu Hsu, You-Wei Cheng, Ming-Yu Lee}} 
+
+\small Designing Deep Reinforcement Learning-Based Dynamic Machine Allocation with Case Study of a Semiconductor Tool Group \\
+\footnotesize \textit{\textcolor{darkgray}{Hsin-Tzu Hsu, Shi-Chung Chang}}
+
+\normalsize
+
+\section{Best Application Video Award}
+\textbf{Chair}: Lars Mönch \\
+\textbf{Members}: Feng Ju, Hyun-Jung Kim 
+
+This award is given to the author(s) of a paper presented with outstanding application videos at the IEEE International Conference on Automation Science and Engineering (CASE).
+
+\textbf{Finalists}: \\
+\small Adaptive Incremental Hybrid Impedance Control for Robotic Garment Manipulation \\
+\footnotesize \textit{\textcolor{darkgray}{Yukuan Zhang, Dayuan Chen, Alberto Elías Petrilli-Barceló, Jose Victorio Salazar Luces, Yasuhisa Hirata}} 
+
+\small Strongly-Connected Minimal-Cost Radio-Networks among Fixed Terminals Using Mobile Relays and Avoiding No-Transmission Zones \\
+\footnotesize \textit{\textcolor{darkgray}{Francesco Bernardini, Daniel Biediger, Ileana Pineda, Linda Kleist, Aaron Becker}}
+
+\small Concentric-Tube-Eccentric-Rod: A Continuum Actuator for Macro-/Micro-Scale Translational Actuation \\
+\footnotesize \textit{\textcolor{darkgray}{Lingyun Zeng, S.M.Hadi Sadati, Mirroyal Ismayilov, Lukas Lindenroth, Christos Bergeles}}
+
+\normalsize
+
+\section{Best Healthcare Automation Paper Award}
+\textbf{Chair}: Mauro Gaggero \\
+\textbf{Members}: Angelo Alessandri, Patrizia Bagnerini 
+
+This award is given annually to the author(s) of a paper presented at the IEEE International Conference on Automation Science and Engineering (CASE) that contributed to the notable advancement in Best Healthcare Automation. 
+The award is sponsored by Pinetree Health Technologies Co., Ltd.
+
+\textbf{Finalists}: \\
+\small Fiducial Marker Based Patient-To-Robot Registration and Target Tracking for Automatic Extra-Body Ultrasound Imaging \\
+\footnotesize \textit{\textcolor{darkgray}{Yixuan Zheng, Weizhao Wang, Hamza Ferhusoglu, Tharun Subramaniyam, Zhouyang Xu, Kawal Rhode, Richard James Housden}} 
+
+\small  Accelerating Laboratory Automation through Robot Skill Learning for Sample Scraping \\
+\footnotesize \textit{\textcolor{darkgray}{Gabriella Pizzuto, Hetong Wang, Hatem Fakhruldeen, Bei Peng, Kevin Sebastian Luck, Andrew Ian Cooper}} 
+
+\small  Automating 3D Surgical Suture Planning \\
+\footnotesize \textit{\textcolor{darkgray}{Viraj Ramakrishnan, Julia Isaac, Harshika Jalan, Harsha Polavaram, Aviv Adler, Hansoul Kim, Danyal Fer, Ken Goldberg}}
+
+\end{multicols*}
+
+%----------------------------------------------------------------------------------------
+%	 SUMMER SCHOOL
+%----------------------------------------------------------------------------------------
+
+\chapter{Satellite Events}
+
+\section{CASE24 Summer School on Autonomous Systems for Smart Cities}
+
+Autonomous systems are increasingly becoming integral to the development of smart cities, encompassing a wide range of applications beyond just vehicles. These systems include drones for surveillance, robots for maintenance, and AI-driven software for managing city infrastructure. Research in this field aims to enhance urban safety, reduce environmental impact, improve public services, and ensure sustainable urban development.
+
+Our Summer School intends to showcase the latest advancements in autonomous systems research relevant to smart cities, providing insights to students, academic researchers, and industrial practitioners. The goal is to explore the integration of autonomous systems into various smart city scenarios, including traffic management, public safety, waste management, and energy efficiency.
+
+The summer school will be supported by the RAS TC Automation Cluster and the following RAS Technical Committees: Automation in Logistics, Agricultural Robotics and Automation, Digital Manufacturing and Human-Centered Automation, Performance Evaluation \& Benchmarking of Robotic and Automation Systems.
+
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{ll}
+            \large \textbf{Organizers} \vspace{2mm} \\
+            \textbf{Maria Pia Fanti} & \textbf{Angela Faragasso} \\
+            \textit{Polytechnic University of Bari} & \textit{University of Tokyo} \vspace{2mm} \\
+            \textbf{Birgit Vogel-Heuser} & \textbf{Fabio Bonsignorio} \\
+            \textit{Technical University of Munich} & \textit{University of Zagreb} 
+        \end{tabular}
+    } \hspace{5mm}
+    \subfloat{
+        \begin{tabular}{p{55mm}}
+            \large \textbf{Program} \vspace{2mm} \\
+            \textbf{Date}: August 28th, 2024 \\
+            \textbf{Time}: 8:30 – 17:00 \\
+        \end{tabular}
+    }
+\end{table}
+
+% \newpage
+
+% \section{Program \& Speakers}
+% \begin{table}[h!]
+%     \subfloat{
+%         \begin{tabular}{p{40mm}}
+%             \includegraphics[width=1\linewidth]{summer-school/Birgit-Vogel-Heuse.png}\vspace{2mm} \\
+%             \multicolumn{1}{c}{\textbf{Birgit Vogel-Heuser}} 
+%         \end{tabular}
+%     }
+%     \subfloat{
+%         \begin{tabular}{p{110mm}}
+%             \parbox{110mm}{\subsection*{Digital Twins to Improve Engineering and Operation of Machines and Plants for Increased Autonomy}} \\ 
+%             Digital Twins in automated Production Systems shall support longevity of such systems as well as adaptability and thereby enable Industry 5.0 and autonomy in the future. The talk will introduce the specific requirements, challenges and potential benefit of Digital Twins for such long living aPS as well as the technologies used. Three main aspects are discussed; model driven engineering for traceability and maintenance, (De-)Composability of control software to improve adaptability and autonomy and evolvability of DTs by learning during operation. Application examples like the extended Pick and Place Unit, the MyYoghurt plant and the Bavarian KI.
+%         \end{tabular}
+%     }
+% \end{table}
+
+% \begin{table}[h!]
+%     \subfloat{
+%         \begin{tabular}{p{110mm}}
+%             \parbox{110mm}{\subsection*{Reproducible and Measurable research in AI and Robotics for Smart Cities}} \\ 
+%             We will highlight the importance of a wider adoption of reproducibility and benchmarking methods to accelerate research and ease the technology transfer of research results in AI and Robotics. We will discuss the importance of reproducible research for dependability in smart city applications. We will illustrate the epistemological and theoretical basis of current methods and describe the best practices. We will have a look at closer and less close future developments.
+%         \end{tabular}
+%     }
+%     \subfloat{
+%         \begin{tabular}{p{40mm}}
+%             \includegraphics[width=1\linewidth]{summer-school/Fabio-Bonsignorio.png}\vspace{2mm} \\
+%             \multicolumn{1}{c}{\textbf{Fabio Bonsignorio}} 
+%         \end{tabular}
+%     }
+% \end{table}
+
+% \begin{table}[h!]
+%     \subfloat{
+%         \begin{tabular}{p{40mm}}
+%             \includegraphics[width=1\linewidth]{summer-school/maria-pia-fanti.png}\vspace{2mm} \\
+%             \multicolumn{1}{c}{\textbf{Maria Pia Fanti}} 
+%         \end{tabular}
+%     }
+%     \subfloat{
+%         \begin{tabular}{p{110mm}}
+%             \parbox{110mm}{\subsection*{New Approaches for Managing Road Intersections Involving Autonomous, Cooperative, Connected and Automated Vehicles}} \\ 
+%             The number of cooperative, connected and automated vehicles (CCAVs) in urban areas will gradually increase in the near future. As a consequence, mixed traffic made of both regular human driven and CCAVs will likely be a typical scenario over the next few years. The short course will present some approaches for collision detection and avoidance at intersections. Two new proposed strategies will be present: i) one based on Artificial Intelligence tools and traffic simulation; ii) second based on decentralized algorithms, geometric characterization of the intersection and distributed optimization procedures.
+%         \end{tabular}
+%     }
+% \end{table}
+
+% \begin{table}[h!]
+%     \subfloat{
+%         \begin{tabular}{p{110mm}}
+%             \parbox{110mm}{\subsection*{Robust and Data-efficient Reinforcement Learning and Fast Optimal Planning}} \\ Model-free reinforcement learning (MFRL) is very popular, but practical experience shows that MFRL both requires a lot of data and is very sensitive to high frequency resonances. Furthermore, the reward shaping is both critical and time consuming. In this talk, these problems are illustrated, and a couple of simple and efficient strategies are proposed. The strategies are applied to energy optimization of moving devices, including eco-driving of electric cars and trucks. It is also shown how constraint programming (CP) combined with a satisfiability (SAT) solver can be used for planning, based on Petri nets. Optimal plans can then be generated 100-1000 times faster compared to standard strategies.
+%         \end{tabular}
+%     }
+%     \subfloat{
+%         \begin{tabular}{p{40mm}}
+%             \includegraphics[width=1\linewidth]{summer-school/Bengt-Lennartson.png}\vspace{2mm} \\
+%             \multicolumn{1}{c}{\textbf{Bengt Lennartson}} 
+%         \end{tabular}
+%     }
+% \end{table}
+
+% \begin{table}[h!]
+%     \vspace{-90mm}
+%     \subfloat{
+%         \begin{tabular}{p{40mm}}
+%             \includegraphics[width=1\linewidth]{summer-school/MengChu-Zhou.png}\vspace{2mm} \\
+%             \multicolumn{1}{c}{\textbf{MengChu Zhou}} 
+%         \end{tabular}
+%     }
+%     \subfloat{
+%         \begin{tabular}{p{110mm}}
+%             \parbox{110mm}{\subsection*{Autonomous Vehicle Group: Formation, Cooperation and Evolution in Internet of Vehicles}} \\ Vehicle groups that are composed of autonomous vehicles can increase the perception range of vehicles, and their dynamic evolution can provide guidance for the effective operation of autonomous vehicles. Most existing studies on vehicle group formation neither propose a standard vehicle group model, nor consider vehicle mobility and dynamic topology of vehicle groups. Instead, they focus on detecting dynamic evolution without predicting it. This talk presents the dynamic formation, cooperation, evolution and prediction for autonomous vehicle groups, thus benefiting the effective operation of smart cities.
+%         \end{tabular}
+%     }
+% \end{table}
+
+% %----------------------------------------------------------------------------------------
+% %	 VIPERC 2024
+% %----------------------------------------------------------------------------------------
+
+% \chapter{VIPERC 2024}
+\newpage
+\section{3rd International Conference on Visual Pattern Extraction and Recognition for Cultural Heritage Understanding (VIPERC 2024)}
+
+The VIPERC 2024 on Visual Pattern Extraction and Recognition for Cultural Heritage Understanding aims to be a satellite event of IEEE CASE 2024, presenting academic and industry papers on big data, data mining and knowledge discovery, machine learning and deep learning, 3D modeling and simulation (structural, thermal, functional and acoustic analysis), software engineering, and, more generally, aspects related to digital transition for visual pattern extraction, analysis, and recognition to preserve cultural heritage.
+
+VIPERC 2024 welcomes contributions from various research areas related to the digitization of cultural heritage, building recovery, conservation, and maintenance, leveraging current technologies and the support of robotics and automation. It also favours the participation of young research scholars who want to present their early-stage in-progress academic work.
+
+\section{Organizing committee}
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{75mm}}
+            \large \textbf{General Chairs} \\
+            \textbf{Alessia AMELIO} \\
+            \textit{University of Chieti-Pescara} \vspace{2mm} \\
+            \textbf{Drahomira CUPAR} \\
+            \textit{University of Zadar} \vspace{2mm} \\
+            \textbf{Valentino SANGIORGIO} \\
+            \textit{University of Chieti-Pescara} \\ \\
+            \vspace{140mm}
+        \end{tabular}
+    }
+        \subfloat{
+        \begin{tabular}{p{75mm}}
+            \large \textbf{Program Chairs} \\
+            \textbf{Marijana TOMIĆ} \\ 
+            \textit{University of Zadar} \vspace{2mm} \\
+            \textbf{David RAMÌREZ SOLANA} \\ 
+            \textit{Polytechnic University of Bari} \vspace{2mm} \\
+            \textbf{Sergio MONTELPARE} \\ 
+            \textit{University of Chieti-Pescara} \vspace{2mm} \\
+            \textbf{Luca VIRGILI} \\ 
+            \textit{Marche Polytechnic University} \vspace{2mm} \\
+            \textbf{Alex MIRCOLI} \\ 
+            \textit{Marche Polytechnic University} \vspace{4mm} 
+        \end{tabular}
+    }
+    % \subfloat{
+    %     \begin{tabular}{p{75mm}}
+    %         \large \textbf{Program Committee} \\
+    %         \textbf{Michelangelo CECI} \\
+    %         \textit{University of Bari Aldo Moro} \vspace{2mm} \\
+    %         \textbf{Adrian GABRIEL} \\
+    %         \textit{Chifu Aix-Marseille University} \vspace{2mm} \\
+    %         \textbf{Claudia DIAMANTINI} \\
+    %         \textit{Marche Polytechnic University} \vspace{2mm} \\
+    %         \textbf{Ivo Rumenov DRAGANOV} \\ 
+    %         \textit{Technical University of Sofia} \vspace{2mm} \\
+    %         \textbf{Zoran IVANOVSKI} \\
+    %         \textit{University in Skopie} \vspace{2mm} \\
+    %         \textbf{Tomislav KARTALOV} \\
+    %         \textit{University in Skopie} \vspace{2mm} \\
+    %         \textbf{Andreas GIANNAKOULOPOULOS} \\
+    %         \textit{Ionian University} \vspace{2mm} \\
+    %         \textbf{Dustin VAN DER HAAR} \\
+    %         \textit{University of Johannesburg} \vspace{2mm} \\
+    %         \textbf{Maura MENGONI} \\
+    %         \textit{Marche Polytechnic University}
+    %     \end{tabular}
+    % }
+\end{table}
+
+% \begin{table}[h!]
+%     \subfloat{
+%         \begin{tabular}{p{75mm}}
+%             \textbf{Michail PANAGOPOULOS} \\
+%             \textit{Ionian University} \vspace{2mm} \\
+%             \textbf{Maria Antonietta PASCALI} \\
+%             \textit{ISTI-CNR} \vspace{2mm} \\
+%             \textbf{Belma RAMIĆ-BRKIĆ} \\
+%             \textit{Sarajevo School of Science and Technology} \vspace{2mm} \\ 
+%             \textbf{Domenico URSINO} \\ 
+%             \textit{Marche Polytechnic University} \vspace{2mm} \\
+%             \textbf{Gian Piero ZARRI} \\ 
+%             \textit{Sorbonne University} \vspace{2mm} \\
+%             \textbf{Radu Tudor IONESCU} \\ 
+%             \textit{University of Bucharest} \vspace{2mm} \\
+%             \textbf{Marius POPESCU} \\ 
+%             \textit{University of Bucharest} \vspace{2mm} \\
+%             \textbf{Iuliana GEORGESCU} \\ 
+%             \textit{University of Bucharest} \vspace{2mm} \\ 
+%             \textbf{Ionut Cosmin DUTA} \\
+%             \textit{Huawei} \vspace{2mm} \\ 
+%         \end{tabular}
+%     }
+%     \subfloat{
+%         \begin{tabular}{p{75mm}}
+%             \textbf{Katerina KABASSI} \\
+%             \textit{Ionian University} \vspace{2mm} \\
+%             \textbf{Carlos Alexandre BARROS DE MELLO} \\
+%             \textit{Federal University of Pernambuco} \vspace{2mm} \\
+%             \textbf{Anders HAST} \\ 
+%             \textit{Uppsala University} \vspace{2mm} \\
+%             \textbf{Marijana COSOVIĆ} \\
+%             \textit{University of East Sarajevo} \vspace{2mm} \\
+%             \textbf{Radmila Janković BABIĆ} \\
+%             \textit{Mathematical Institute of the Serbian Academy of Sciences and Arts} \vspace{2mm} \\
+%             \textbf{Marco RICCI} \\
+%             \textit{University of Calabria} \vspace{2mm} \\
+%             \textbf{Massimiliano PEPE} \\
+%             \textit{University of Chieti-Pescara} \vspace{2mm} \\
+%             \textbf{Francesco CAUTERUCCIO} \\
+%             \textit{University of Salerno}
+%             \vspace{9mm}
+%         \end{tabular}
+%     }
+% \end{table}
+
+% \section{Topics of Interest}
+% \begin{multicols}{2}
+%     \large \textbf{Analysis} \normalsize
+%     \vspace{-4mm}
+%     \begin{itemize}[leftmargin=*, noitemsep]
+%         \itema 3D reconstruction and model processing
+%         \itema 3D modelling and simulation (e.g. structural, thermal, functional and acoustic analysis) for cultural heritage 
+%         \itema Remote sensing for cultural heritage preservation
+%         \itema Surrogate models (computational models that approximate the behaviour of complex systems or processes)
+%     \end{itemize}
+    
+
+%     \large \textbf{Acoustics and digital technology} \normalsize
+%     \vspace{-4mm}
+%     \begin{itemize}[leftmargin=*, noitemsep]
+%         \itema Acoustics in cultural heritage
+%         \itema Soundscape planning and preservation
+%     \end{itemize}
+    
+%     \large \textbf{Disruptive technologies} \normalsize
+%     \vspace{-4mm}
+%     \begin{itemize}[leftmargin=*, noitemsep]
+%         \itema Machine learning and data science for cultural heritage multimedia data
+%         \itema Artificial intelligence in the recovery, analysis, and enhancement of cultural heritage
+%         \itema Augmented and virtual reality systems
+%         \itema 3D printing
+%         \itema Internet of things in cultural heritage
+%     \end{itemize}
+    
+
+%     \large \textbf{Manufacturing and intervention}  \normalsize
+%     \vspace{-4mm}
+%     \begin{itemize}[leftmargin=*, noitemsep]
+%         \itema Robotics and digital manufacturing for built heritage 
+%         \itema Digitization of industrial products, projects, prototypes, and artefacts for cultural heritage preservation 
+%         \itema Cutting-edge and sustainable digital-supported materials for built heritage 
+%         \itema Metamaterials fabricated with specific patterns
+%         \itema Climate changes and intelligent mitigation strategies to preserve cultural heritage sites
+%     \end{itemize}
+
+%     \large \textbf{Diagnostics} \normalsize
+%     \vspace{-4mm}
+%     \begin{itemize}[leftmargin=*, noitemsep]
+%         \itema Intelligent sensor systems for building monitoring, recovery, conservation, maintenance and art restoration 
+%         \itema Discrete geometry techniques for pattern recognition and pattern matching in cultural heritage images
+%         \itema Image processing, texture, shape analysis and natural language processing in historical data
+%     \end{itemize}
+% \end{multicols}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% USEFUL INFORMATION %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Useful Information}
+
+
+%%%%%%%%%%%%%%%%%%%%% About Nicolaus hotel %%%%%%%%%%%%%%%%%%%%%
+\begin{multicols}{2}
+[\section{The Nicolaus Hotel}]
+The Nicolaus Hotel is an elegant hotel and conference center a few step away from Bari city center. \\
+The hotel offers a welcoming atmosphere and an immediate sense of belonging. The interiors are full of light, with functional and technological spaces combined with art and creativity. It has 174 comfortable and elegant rooms, 15 modular and technical meeting rooms, a cozy and private wellness area, and 5 exclusive dining locations. \\
+In addition, the Nicolaus Hotel has a large Congress Centre divided into 15 modular and technical conference rooms seating up to 1000 and qualified professional staff to support the conference’s activities.
+\end{multicols}
+
+\vspace{-5mm}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{images/useful_info/nicolaus/nicolaus.jpg}
+\end{figure}
+
+
+% ----------------------------------------------------------- %
+% ---------------- How to reach the Nicolaus ---------------- %
+% ----------------------------------------------------------- %
+\vspace{-5mm}
+% \begin{adjustwidth}{20pt}{10pt}
+\subsection*{How to Reach the Nicolaus Hotel}
+\vspace{-5mm}
+If you stay at Nicolaus Hotel, you can benefit of the \textit{free bus shuttle service} from/to the Bari Airport. The service is upon availability at scheduled times, and it need to be booked a least 24 hours before your arrival (and departure). For further information contact the \color{blue}\href{https://www.thenicolaushotel.com/en}{Nicolaus Hotel}\color{black}. \\
+If you do not stay at Nicolaus Hotel, from the Airport of Bari (\textit{Aeroporto}, in Italian) you can easily reach the Main Railway Station (Bari Centrale) by \textit{train}, \textit{bus}, and \textit{taxi service} (see below). From there, take a \textit{city-bus} operated by AMTAB to the Nicolaus Hotel.
+% \end{adjustwidth}
+
+\newpage
+\begin{adjustwidth}{10pt}{20pt}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/useful_info/nicolaus/1920px-Bari_mappa_linee_FM.png}
+\end{figure}
+
+% ---------------- By train ----------------
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{110mm}}
+            \parbox{110mm}{\textbf{By train}}
+            
+            \vspace{1mm}
+            A 20-minute \textit{train}, operated by \color{blue}\href{https://www.ferrovienordbarese.it/home}{\textit{Ferrotramviaria}}\color{black}, connects Bari Airport to/from Bari Centrale (the Main Railway Station, or FS Station). The entrance of the “Ferrotramviaria Railway Station” is located on the right side of the main entrance of the Airport. \\
+            There are on average two trains per hour and a single ticket costs € 5.00. Ticket can be purchased at the \textit{box office} of the station, or at the automatic \textit{ticket-machines}, or online through the \textit{Ferrotramviaria App} (download by scanning the QR Code).
+            \end{tabular}
+            }
+    \subfloat{
+        \begin{tabular}{p{40mm}}
+            \parbox{40mm}{}
+            \centering
+            \includegraphics[width=0.9\linewidth]{images/useful_info/nicolaus/ferrotramviaria-app.png}
+        \end{tabular}
+            }
+\end{table}
+
+% ---------------- By bus shuttle ----------------
+\vspace{-3mm}
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{100mm}}
+            \parbox{100mm}{}
+            \centering
+            \includegraphics[width=\linewidth]{images/useful_info/nicolaus/Bus-shuttle_Tempesta.png}
+            \end{tabular}
+            }
+    \subfloat{
+        \begin{tabular}{p{50mm}}
+            \parbox{50mm}{\textbf{By bus shuttle}}
+
+            \vspace{1mm}
+            A 30-minute \textit{public bus shuttle} to/from Bari Airport and Bari Centrale operated by \href{https://www.autoservizitempesta.it/servizi-orari-bus-navetta/}{\color{blue}\textit{Tempesta Autolinee}\color{black}} (stops and timetables shown here can change, always check on the website).
+            The bus stops in front of the arrivals and departures exit (at the Airport) and in “Aldo Moro” square (at the Main Railway Station).  You can purchase a single ticket for € 4.00 directly on the bus before departure.
+        \end{tabular}
+            }
+\end{table}
+
+% ---------------- Nicolaus bus shuttle ----------------
+Alternatively, you can take directly a city-bus (\textit{line 16}) from Bari Airport to the Main Railway Station for € 1.50 (on board). The travel duration is around 40 minutes. 
+Further information on stops and timetables on the \color{blue}\href{http://ro.autobus.it/TP/amtab/lines.aspx}{AMTAB} \color{black} website.
+
+\textbf{By taxi}
+
+A taxi to the city center costs approximately € 25.00 – 30.00. Further information at  https://bari.airports.aeroportidipuglia.it/da-e-per-gli-aeroporti/type/taxi/
+\end{adjustwidth}
+
+
+
+%%%%%%%%%%%%%%%%%%%%% Discover Bari %%%%%%%%%%%%%%%%%%%%%
+\newpage
+% \begin{adjustwidth}{20pt}{10pt}
+\begin{multicols}{2}
+[\section{Discover Bari}]
+Bari is the capital city of Apulia Region (or Puglia, as it is known to the locals). While keeping strong ties with its own traditions, it represents a modern city, as well an important economic center, in the whole Southern Italy. Bari is a highly multifaceted city, and you really need to discover every single aspect to understand its true core. \\
+Known as the \textit{Gateway to the East} due to its long tradition of trade, this capital of Apulia is rich in history. Exploring the historic city center allows us to discover its most authentic character, with signs of its past scattered through the local alleyways and endless examples of age-old traditions passed from generation to generation. Then, the famous Bari promenade offers one of the most beautiful view in Italy, overlooking the clear sea and the unique charm of Bari. \\
+Bari is composed of four urban sections. In the northern city area, there is the Old Town (also called \textit{Bari Vecchia}) between two modern harbours, with the \textit{Basilica of San Nicola} (Saint Nicolaus), the \textit{Cathedral of San Sabino}, and the \textit{Hohenstaufen Castle of Frederick II}, which is now also a major nightlife district. In the southern district, the \textit{Murat quarter} (erected by Joachim Murat), the modern heart of the city, is laid out on a rectangular grid-plan with a promenade on the sea and the major shopping district. \\
+Today, this dynamic city, nestled in the heart of the countryside, punctuated by white dry-stone walls, still holds dear the memory of its seafaring exploits of the Middle Ages, as well as its precious monuments and striking churches.
+
+\end{multicols}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{images/useful_info/discover-bari/Bari.jpg}
+\end{figure}
+
+
+% \end{adjustwidth}
+
+
+% ----------------------------------------------------------- %
+% ------------------- Getting around Bari ------------------- %
+% ----------------------------------------------------------- %
+\newpage
+\begin{adjustwidth}{10pt}{20pt}
+\begin{multicols}{2}
+[\subsection*{Getting around Bari}]
+To reach the most suggestive areas of Bari there is no better service than that offered by the public \color{blue}\href{http://ro.autobus.it/TP/amtab/lines.aspx}{AMTAB} \color{black} urban transport network, with several city-buses. \\
+A ticket costs €1 (€1.50 if bought on board). Further information on lines, stops, and timetables on the AMTAB website, or check out the travel planner dashboard. You can instead download the \color{blue}\href{https://www.muvt.app/}{MUVT App}\color{black}, which allows you to consult the timetables of the rides, create travel itineraries and buy tickets directly from your smartphone. \\
+As an alternative, you can always take a taxi in Bari Centrale.
+\end{multicols}
+
+
+% ----------------------------------------------------------- %
+% -------------- Suggested attractions in Bari -------------- %
+% ----------------------------------------------------------- %
+\subsection*{Top Suggested Tourist Attractions in Bari}
+\vspace{-5mm}
+A perfect city for those who love the sea, but also for avid explorers: what to see in Bari? We have shortlisted some \textit{popular sites} that you must absolutely visit.
+
+% ---------------- Bari vecchia ----------------
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{90mm}}
+            \parbox{90mm}{\textbf{Bari Vecchia}}
+            
+            \vspace{1mm}
+            A tour of \textit{Bari Vecchia} is perfect to get stuck into the heart of this Apulian capital. The San Nicola district spans between the two ports of Bari, the old and the new, overlooking the seafront of Bari. The historical centre of the city, dating back to the Middle Ages, is encircled by walls.
+            While exploring the narrow streets, take a moment to admire the women making traditional Apulian \textit{orecchiette} pasta by hand.
+            \end{tabular}
+            }
+    \subfloat{
+        \begin{tabular}{p{60mm}}
+            \parbox{60mm}{}
+
+            \vspace{2mm}
+            \centering
+            \includegraphics[width=\linewidth]{images/useful_info/discover-bari/bari-vecchia.jpg}
+        \end{tabular}
+            }
+\end{table}
+
+% ---------------- San Nicola ----------------
+\vspace{-4mm}
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{60mm}}
+            \parbox{60mm}
+
+            \centering
+            \includegraphics[width=\linewidth]{images/useful_info/discover-bari/san-nicola.jpg}
+        \end{tabular}
+            }
+    \subfloat{
+        \begin{tabular}{p{90mm}}
+            \parbox{90mm}{\textbf{Basilica of San Nicola}}
+            
+            \vspace{1mm}
+            The \textit{Basilica of San Nicola} is an important Romanesque church located in the heart of the old town. Built between 1087 and 1197, the basilica houses the relics of Saint Nicholas, Bishop of Myra, making it a place of pilgrimage for Christians around the world.
+            Its imposing facade and majestic interior, with frescoes, columns and the famous ciborium, testify to the historical and spiritual richness of this site.
+        \end{tabular}
+            }
+\end{table}
+
+% ---------------- Castello ----------------
+\vspace{-2mm}
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{90mm}}
+            \parbox{90mm}{\textbf{The Swabian Castle by Frederick II}}
+            
+            \vspace{1mm}
+            The \textit{Norman-Swabian Castle of Bari} is a majestic medieval fortress located in the heart of the city. Built in the 12th century by the Normans and later enlarged by the Swabians, the castle is a significant example of military architecture. With its imposing towers, the mighty walls and the impressive moat, the castle tells the story of the successive dominations in Puglia. Today it hosts exhibitions and cultural events, offering visitors a fascinating journey into the past.
+            \end{tabular}
+            }
+    \subfloat{
+        \begin{tabular}{p{60mm}}
+            \parbox{60mm}{}
+            \centering
+            \includegraphics[width=\linewidth]{images/useful_info/discover-bari/castello-svevo-bari.jpg}
+        \end{tabular}
+            }
+\end{table}
+\end{adjustwidth}
+
+% ---------------- Cattedrale ----------------
+\newpage
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{60mm}}
+            \parbox{60mm}
+
+            \centering
+            \includegraphics[width=\linewidth]{images/useful_info/discover-bari/cattedrale_copertina.jpg}
+        \end{tabular}
+            }
+    \subfloat{
+        \begin{tabular}{p{90mm}}
+            \parbox{90mm}{\textbf{Cathedral of San Sabino}}
+            
+            \vspace{1mm}
+            The \textit{Cathedral of San Sabino} is a masterpiece of Apulian Romanesque architecture, located in the historic center of Bari. Built in the twelfth century, it is dedicated to San Sabino, bishop of Canosa. The Cathedral is renowned for its austere facade and intricate interior decorations. Inside, visitors can admire the precious mosaic floor and the crypt that houses the relics of the saint.
+        \end{tabular}
+            }
+\end{table}
+
+% ---------------- Lungomare ----------------
+\vspace{-2mm}
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{90mm}}
+            \parbox{90mm}{\textbf{Bari Promenade}}
+            
+            \vspace{1mm}
+            Bari Promenade, also known as \textit{Lungomare Nazario Sauro}, stretches for several kilometers along the coast, offering a breathtaking view of the Adriatic Sea. Built in the 1920s, the promenade features elegant street lamps, benches and palm trees, creating a relaxing atmosphere for walking, jogging and cycling. It is a great place to watch the sunset and enjoy the sea breeze, with numerous bars and restaurants offering local specialities along the way.
+            \end{tabular}
+            }
+    \subfloat{
+        \begin{tabular}{p{60mm}}
+            \parbox{60mm}{}
+            
+            \centering
+            \includegraphics[width=\linewidth]{images/useful_info/discover-bari/lungomare.jpeg}
+        \end{tabular}
+            }
+\end{table}
+
+% ---------------- Strada delle Orecchiette ----------------
+\vspace{-2mm}
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{60mm}}
+            \parbox{60mm}{}
+            
+            \centering
+            \includegraphics[width=\linewidth]{images/useful_info/discover-bari/strada-orecchiette-pasta-bari-vecchia.jpg}
+        \end{tabular}
+            }
+    \subfloat{
+        \begin{tabular}{p{90mm}}
+            \parbox{90mm}{\textbf{Orecchiette's Street}}
+            
+            \vspace{1mm}
+            Another must-visit destination for food enthusiasts is the \textit{Strada delle orecchiette} (Orecchiette's Street) in Bari Vecchia (the Old Town). Here, amidst the narrow streets, local women showcase their artisanal skills by handcrafting the famous orecchiette pasta right outside their homes.
+            Visitors can witness the meticulous process of pasta-making and even sample these freshly made delicacies.
+        \end{tabular}
+            }
+\end{table}
+
+
+
+%%%%%%%%%%%%%%%%%%%%% Find out more about Puglia %%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{adjustwidth}{8pt}{12pt}
+\section{Find out more about Puglia}
+In recent years, Puglia has gradually built a reputation as a bridge between West and East, that mirrors an increasingly multi-cultural, open, tolerant and friendly community, connecting people, individuals and businesses, from \textit{different countries and cultures}.
+
+
+% ----------------------------------------------------------- %
+% ------------------- Puglia's gastronomy ------------------- %
+% ----------------------------------------------------------- %
+\vspace{-5mm}
+\begin{multicols}{2}
+[\subsection*{Puglia’s Gastronomy}]
+The region’s cuisine is based on typical products found within the surrounding region of Apulia: \textit{wheat}, \textit{olive oil}, \textit{seafood} and \textit{wine}. Local flour is used in homemade bread and pasta production including, most notably, the famous \textit{orecchiette} ear-shaped pasta. \\
+Homemade dough and olive oils are also used to bake fried \textit{panzerotti} with mozzarella, and \textit{focaccia alla barese} with tomatoes. Perhaps, Bari’s most famous dish is the oven-baked \textit{Patate, riso e cozze} (potatoes with rices and mussels). The whole Apulian region have a range of wines, including the classical \textit{Primitivo}, \textit{Castel del Monte}, \textit{Muscat}, and several \textit{rosé wines}. \\
+While attending the conference, take some time to explore the region's rich culinary heritage. Known for its delicious seafood dishes and traditional Pugliese cuisine, Bari offers a gastronomic experience like no other. Be sure to visit local trattorias and osterias to experience the region's authentic flavors. \\
+The Baresi are also very fond of vegetables, especially \textit{chicory} and \textit{fava beans} they combine in a wonderful hearty dish. We also recommend a pasta dish unique to the region --\textit{spaghetti all’assassina}--, which is dried pasta cooked only in a heady sauce of tomato and wine and then topped with cool ricotta. The pasta stays firm, much more so than mere al dente, and has a delightful chewiness to it. The “assassin” reference is to the chili peppers that make this a fiery killer of a dish, said to be created in Bari in the 1970s.
+\end{multicols}
+
+\vspace{-4mm}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.96\linewidth]{images/useful_info/puglia/Immagine4.jpg}
+\end{figure}
+\end{adjustwidth}
+
+
+% ----------------------------------------------------------- %
+% --------------- Beaches and Nature in Puglia -------------- %
+% ----------------------------------------------------------- %
+\newpage
+\begin{adjustwidth}{10pt}{20pt}
+\begin{multicols}{2}
+[\subsection*{Beaches and Nature in Puglia}]
+Bari is the ideal setting for a refreshing swim along the captivating Italian coastline. Discover the \textit{white high cliffs}, the \textit{sandy beaches} with \textit{crystalline waters}, and the charming towns along the coast. Plan your visit to experience the scenic wonders Puglia has to offer on our website. \\
+Nature around in Puglia is magnificent. The white high cliffs of \textit{Mattinata} and \textit{Vieste}, the long sandy beaches with crystalline water, the \textit{grottoes of Castellana Grotte}, the second European biggest \textit{Canyon of the Gravina di Laterza}, the \textit{bauxite querry in Otranto}, the beautiful little towns on the sea like \textit{Polignano}, \textit{Monopoli}, and \textit{Gallipoli}, the little cities surrounded by acres of olive groves like \textit{Martina Franca}, the \textit{white city of Ostuni}, and may other special places make the Apulia region an incredible land to be discovered step by step.
+\end{multicols}
+
+\vspace{-4mm}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.95\linewidth]{images/useful_info/puglia/Sea.jpg}
+\end{figure}
+\end{adjustwidth}
+
+
+% ----------------------------------------------------------- %
+% ------------------ Hystory and culture -------------------- %
+% ----------------------------------------------------------- %
+\vspace{-2mm}
+\begin{adjustwidth}{10pt}{20pt}
+\begin{multicols}{2}
+[\subsection*{History and Culture in Puglia}]
+A vacation in Puglia means also history and culture, thanks to the many museums and archaeological sites across the area. Like that of so many parts of southern Italy, Puglia's history is a tangled web indeed! \\
+Its strategic position and its fertile soil made it an attractive proposition. In the 8th century BC, it became a Greek colony and was part of Magna Graecia. \textit{Taranto} was one of the most flourishing cities during this period. In 272 BC, the Romans conquered the region, leaving behind a wealth of archaeological sites. In the Middle Ages, Puglia was ruled by \textit{Goths}, \textit{Lombards}, \textit{Arabs}, \textit{Normans}, and \textit{Byzantines}, each leaving their mark on the region’s culture and architecture.
+\end{multicols}
+\end{adjustwidth}
+
+\begin{adjustwidth}{8pt}{12pt}
+\begin{multicols}{2}
+[]
+The cultural and historical heritage in Puglia is witnessed by many landmarks: \textit{St. Nicholas’ Basilica}, the \textit{Swabian Castle by Frederick II}, the \textit{Margherita Theatre} and the \textit{Petruzzelli Theatre} (in the town of Bari). \textit{Castel del Monte} octagonal castle by Frederick II (in the town of Andria), the \textit{Trulli} stone huts in the Unesco World Heritage Site of Alberobello (in the province of Bari), the \textit{Lecce} Baroque (in the town of Lecce), and many more. \\
+You can plan your trip with the Puglia official tourism portal \color{blue}\href{https://www.viaggiareinpuglia.it/en/homepage}{\textit{Puglia turismo}}\color{black}.
+\end{multicols}
+
+\vspace{-4mm}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.95\linewidth]{images/useful_info/puglia/Culture.jpg}
+\end{figure}
+\end{adjustwidth}
+
+
+% ----------------------------------------------------------- %
+% ------------- Suggested attractions in Puglia ------------- %
+% ----------------------------------------------------------- %
+\newpage
+\begin{adjustwidth}{10pt}{20pt}
+\subsection*{Top Suggested Tourist Attractions in Puglia}
+\vspace{-5mm}
+Bari is situated in the center of Apulia, making it simple reaching a lot of interesting and fascinating tourist attractions all around the region.
+We suggest \textit{some location} that you cannot absolutely miss.
+
+% ---------------- Cattedrale di Trani ----------------
+\vspace{5mm}
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{90mm}}
+            \parbox{90mm}{\textbf{The majestic Cathedral of Trani}}
+            \vspace{1mm}
+            The \textit{Cathedral of San Nicola Pellegrino in Trani} has a typical Apulian Romanesque style, built during Norman rule, features light pink limestone tuff. The 58-meter high bell tower, constructed between the 13th and 14th centuries, offers breathtaking views from the top. The complex includes the Upper Church dedicated to San Nicola Pellegrino, the Lower Crypt housing his relics, and the Hypogeum of San Leucio, accessible via a staircase from the left nave.
+            \end{tabular}
+            }
+    \subfloat{
+        \begin{tabular}{p{60mm}}
+            \parbox{60mm}{}
+
+            \centering
+            \includegraphics[width=\linewidth]{images/useful_info/puglia/trani.jpg}
+        \end{tabular}
+            }
+\end{table}
+\vspace{-3mm}
+\textbf{How to reach it?}
+\vspace{-5mm}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \itema \textit{By train}: from Bari Centrale (the Main railway station), take a regional train to Trani. The journey takes about 30-40 minutes. There are numerous trains operated by \color{blue}\href{https://www.trenitalia.com/en.html}{\textit{Trenitalia}} \color{black} throughout the day. For prices and timetables check at Trenitalia website.
+\end{itemize}
+
+% ---------------- Polignano a Mare ----------------
+\vspace{3mm}
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{60mm}}
+            \parbox{60mm}{}
+            
+            \centering
+            \includegraphics[width=\linewidth]{images/useful_info/puglia/polignano.png}
+            \end{tabular}
+            }
+    \subfloat{
+        \begin{tabular}{p{90mm}}
+            \parbox{90mm}{\textbf{The spectacular cliffs of Polignano a Mare}}
+
+            \vspace{1mm}
+            \textit{Polignano a Mare} is a stunning Apulian town overlooking the Adriatic. It was named the most welcoming resort in the world for 2023 by Booking.com’s Traveller Review Awards. The ranking, based on 240 million verified reviews, highlights the town's natural and cultural heritage, food and wine, local traditions, and exceptional tourist facilities and services.
+        \end{tabular}
+            }
+\end{table}
+\vspace{-3mm}
+\textbf{How to reach it?}
+\vspace{-5mm}
+\begin{itemize}[leftmargin=*, noitemsep] 
+        \itema \textit{By train}: from Bari Centrale (the Main railway station), take a regional train to Polignano a Mare. The journey takes about 30-40 minutes. There are numerous trains operated by \color{blue}\href{https://www.trenitalia.com/en.html}{\textit{Trenitalia}} \color{black} throughout the day. For prices and timetables check at Trenitalia website.
+        \itema  \textit{By coach}: from ``Largo Ciaia" (Ciaia Square), take a coach to Polignano a Mare. The journey takes about 45 minutes. There are numerous trains operated by \color{blue}\href{https://www.fseonline.it/s/?language=it}{\textit{Ferrovie del Sud-Est}} \color{black} (FSE) throughout the day. For prices and timetables check at FSE website.
+\end{itemize}
+\end{adjustwidth}
+
+% ---------------- Matera ----------------
+\newpage
+\begin{adjustwidth}{8pt}{12pt}
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{90mm}}
+            \parbox{90mm}{\textbf{The famous Stones of Matera}}
+            
+            \vspace{1mm}
+            \textit{Matera} is a very fascinating city of Basilicata region, also known as "the second Bethlehem" for its historical and picturesque charm. Everyone remembers Mel Gibson's famous film "The Passion of Christ", but probably few know that it was shot here. Its famous Sassi, ancient cave dwellings, were inhabited until the 1950s and are now a UNESCO World Heritage site.
+            \end{tabular}
+            }
+    \subfloat{
+        \begin{tabular}{p{60mm}}
+            \parbox{60mm}{}
+            
+            \centering
+            \includegraphics[width=\linewidth]{images/useful_info/puglia/matera.png}
+        \end{tabular}
+            }
+\end{table}
+\vspace{-3mm}
+\textbf{How to reach it?}
+\vspace{-5mm}
+\begin{itemize}[leftmargin=*, noitemsep]
+        \itema \textit{By train}: from Bari Centrale FAL railway station (``Aldo Moro" Square, close to the Main station), take a regional train to Matera. The journey takes about 1 hour and half. There are numerous trains operated by \color{blue}\href{https://ferrovieappulolucane.it/en/}{\textit{Ferrovie Appulo Lucane}} \color{black} (FAL). For prices and timetables check at FAL website.
+        \itema  \textit{By coach}: from Bari Centrale Bus Station (Capruzzi street), take a coach to Matera. The journey takes about 1-1:20 hour. There are numerous journeys operated by \color{blue}\href{https://www.flixbus.com/?noRedirect=true}{\textit{Flixbus}}\color{black}, \color{blue}\href{https://marinobus.it/en/}{\textit{Marinobus}}\color{black}, and \color{blue}\href{https://www.busmiccolis.it/en/linee-extraurbane/}{\textit{Bus Miccolis}}\color{black}. For prices and timetables check at companies websites.
+    \end{itemize}
+
+% ---------------- Monopoli ----------------
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{60mm}}
+            \parbox{60mm}{}
+            
+            \centering
+            \includegraphics[width=\linewidth]{images/useful_info/puglia/monopoli.jpg}
+            \end{tabular}
+            }
+    \subfloat{
+        \begin{tabular}{p{90mm}}
+            \parbox{90mm}{\textbf{Monopoli: the City of 100 Lands}}
+
+            \vspace{1mm}
+            The city owes this name to its \textit{numerous districts}, each with unique features like beaches, countryside, farms, and historic centers.
+            Its \textit{Cathedral} is a Baroque masterpiece, while the coastline boasts hidden coves and sandy beaches. The surrounding countryside is rich with diverse crops such as olives, almonds, and fruits.
+        \end{tabular}
+            }
+\end{table}
+\vspace{-3mm}
+\textbf{How to reach it?}
+\vspace{-5mm}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \itema \textit{By train}: from Bari Centrale (the Main railway station), take a regional train to Monopoli. The journey takes about 30-40 minutes. There are numerous trains operated by \color{blue}\href{https://www.trenitalia.com/en.html}{\textit{Trenitalia}} \color{black} throughout the day. For prices and timetables check at Trenitalia website.
+\end{itemize}
+
+% ---------------- Castel del Monte ----------------
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{90mm}}
+            \parbox{90mm}{\textbf{The octagonal castel of ``Castel del Monte"}}
+            
+            \vspace{1mm}
+            Placed in Andria, it is known for its \textit{octagonal structure}, unique in the world, which made it one of the most important examples of medieval architecture in Italy, as well a \textit{UNESCO World Heritage Site}.
+            All rooms of the castle have an octagonal shape. There are 8 rooms both on the ground and first floor. The building is surrounded by 8 towers that have octagonal plans and are arranged on the eight edges of the plant.
+            \end{tabular}
+            }
+    \subfloat{
+        \begin{tabular}{p{60mm}}
+            \parbox{60mm}{}
+            
+            \centering
+            \includegraphics[width=\linewidth]{images/useful_info/puglia/castel-del-monte.jpg}
+        \end{tabular}
+            }
+\end{table}
+\vspace{-3mm}
+\textbf{How to reach it?}
+\vspace{-5mm}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \itema \textit{By train + coach}: from Bari Centrale (the Main railway station), take a regional train operated by \color{blue}\href{https://www.trenitalia.com/en.html}{\textit{Trenitalia}} \color{black} to Trani (the journey takes about 30-40 minutes). Then, from Trani railway station take a coach operated by \color{blue}\href{https://biglietteria.cotrap.it/#/ricerca}{\textit{COTRAP}} \color{black} to Andria-Castel del Monte (the journey takes about 1 hour). For prices and timetables check at Trenitalia and COTRAP websites.
+\end{itemize}
+\end{adjustwidth}
+
+% ---------------- Ostuni ----------------
+\newpage
+\begin{adjustwidth}{10pt}{20pt}
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{60mm}}
+            \parbox{60mm}{}
+            
+            \centering
+            \includegraphics[width=\linewidth]{images/useful_info/puglia/ostuni-panorama.jpg}
+            \end{tabular}
+            }
+    \subfloat{
+        \begin{tabular}{p{90mm}}
+            \parbox{90mm}{\textbf{Ostuni: the white city}}
+
+            \vspace{1mm}
+            Known as \textit{the White City}, Ostuni is a really pretty town in the land of Salento. It is famous for its historic center characterized by buildings and houses of white lime.
+            The custom of using lime for construction is very old and it seems that it derived also because in the Middle Ages it was thought to be a natural disinfectant against the plague.
+        \end{tabular}
+            }
+\end{table}
+\vspace{-3mm}
+\textbf{How to reach it?}
+\vspace{-5mm}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \itema \textit{By train + bus}: from Bari Centrale (the Main railway station), take a regional train, operated by \color{blue}\href{https://www.trenitalia.com/en.html}{\textit{Trenitalia}} \color{black}, to Ostuni (the journey takes about 50 minutes). Then, from Ostuni Trenitalia railway station. take a local bus, operated by \color{blue}\href{https://biglietteria.cotrap.it/#/ricerca}{\textit{S.T.P. Brindisi s.p.a.}} \color{black} (a COTRAP company) to Ostuni Centro Storico to reach the city center (the journey takes about 15 minutes). For prices and timetables check at Trenitalia and COTRAP websites.
+\end{itemize}
+
+% ---------------- Alberobello ----------------
+\vspace{-2mm}
+% \begin{table}[h!]
+%     \subfloat{
+%         \begin{tabular}{p{90mm}}
+%             % \parbox{90mm}{\textbf{Alberobello: the city of Trulli}} \\
+%             \vspace{1mm}
+%             \textit{Alberobello} is a fabulous place in the Itria Valley between the Apulian provinces of Bari, Brindisi, and Taranto.
+%             It is famous for its \textit{trulli, extraordinary examples of construction in dry stone with conical roof slabs, that make this place unique in the world, worthy of the recognition as a \textit{UNESCO World Heritage Site}.
+%             \end{tabular}
+%             }
+%     \subfloat{
+%         \begin{tabular}{p{60mm}}
+%             \parbox{60mm}{}
+            
+%             \centering
+%             \includegraphics[width=\linewidth]{images/useful_info/puglia/alberobello.png}
+%         \end{tabular}
+%             }
+% \end{table}
+\vspace{-4mm}
+\textbf{How to reach it?}
+\vspace{-5mm}
+\begin{itemize}[leftmargin=*, noitemsep]
+        \itema \textit{By train}: from Bari Centrale (the Main railway station), take a regional train to Putignano (the journey takes about 50 minutes). Then, from Putignano take another regional train to Alberobello (the journey takes about 30 minutes). a There are numerous trains operated both by \color{blue}\href{https://www.trenitalia.com/en.html}{\textit{Trenitalia}} \color{black} and \color{blue}\href{https://www.fseonline.it/s/?language=it}{\textit{Ferrovie del Sud-Est}} \color{black} (FSE) throughout the day. For prices and timetables check at Trenitalia and FSE websites.
+        \itema \textit{By coach}: from ``Largo Sorrentino" (Sorrentino Square), take a coach to Alberobello. The journey takes about 1 hour. There are numerous journeys operated by \color{blue}\href{https://www.fseonline.it/s/?language=it}{\textit{Ferrovie del Sud-Est}} \color{black} (FSE) throughout the day. For prices and timetables check at FSE website.
+    \end{itemize}
+
+% ---------------- Grotte di Castellana ----------------
+\vspace{-2mm}
+\begin{table}[h!]
+    \subfloat{
+        \begin{tabular}{p{60mm}}
+            \parbox{60mm}{}
+            
+            \centering
+            \includegraphics[width=\linewidth]{images/useful_info/puglia/grotte-castellana.png}
+            \end{tabular}
+            }
+    \subfloat{
+        \begin{tabular}{p{90mm}}
+            \parbox{90mm}{\textbf{Castellana's Caves}}
+
+            \vspace{1mm}
+            Rightly called \textit{Meraviglia di Puglia}, the Grottoes of Castellana represents a complex of underground cavities of karst origin, located in the Municipality of Castellana Grotte, in the south-eastern Murge of the Apulian region.
+            Their extraordinary beauty and geological importance makes these caves one of the most spectacular speleological attractions in Italy, with stalactite and stalagmite formations, large caves and fascinating underground passages.
+        \end{tabular}
+            }
+\end{table}
+\vspace{-3mm}
+\textbf{How to reach it?}
+\vspace{-5mm}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \itema \textit{By coach}: from ``Largo Sorrentino" (Sorrentino Square), take a coach to Castellana Grotte (the journey takes about 1:20 hour. There are numerous journeys operated by \color{blue}\href{https://www.fseonline.it/s/?language=it}{\textit{Ferrovie del Sud-Est}} \color{black} (FSE) throughout the day. For prices and timetables check at FSE website.
+\end{itemize}
+\end{adjustwidth}
+
+
+
+%%%%%%%%%%%%%%%%%%%%% Phrasebook %%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{adjustwidth}{8pt}{12pt}
+\section{Phrasebook}
+Although officially recognized as Italian, the language spoken in Bari is heavily influenced by various linguistic elements, leading to the conclusion that the \textit{Barese dialect} can be considered a distinct language.
+
+\vspace{-3mm}
+We have shortlisted here some funny common expressions in the Bari dialect to assist you in navigating the area.
+These unique expressions offer you a glimpse into the rich cultural tapestry of this charming coastal city. Whether you're wandering the ancient streets or enjoying the local cuisine, mastering a few phrases in Barese will enhance your experience and endear you to the locals.
+
+\vspace{5mm}
+\begin{multicols}{2}
+    \RaggedRight
+    \textbf{\textit{Aivògghìie}} $\ \rightarrow \ $ \textit{Sure} \\
+    \justifying
+    It means Sure, but it mostly means a \textit{“yeah I’ve done it a while ago, don’t worry”}. You would use it in the context of someone asking you if you’ve finished studying for a test, and you’ve done all you needed to do.
+
+    \RaggedRight
+    \textbf{\textit{Assàje}} $\ \rightarrow \ $ \textit{A lot} \\
+    \justifying
+    Used to indicate a large quantity, e.g., \textit{"Mi piace assàje"} means “I like it a lot".
+
+    \RaggedRight
+    \textbf{\textit{Cannéstr}} $\ \rightarrow \ $ \textit{Basket} \\
+    \justifying
+    Used for shopping or carrying items, e.g., \textit{"Prendi il cannéstr per la frutta"} means “Take the basket for the fruit".
+
+    \RaggedRight
+    \textbf{\textit{Cazzaròle}} $\ \rightarrow \ $ \textit{Cooking pots} \\
+    \justifying
+    This term refers to pots and pans in the kitchen, e.g., \textit{"Metti l'acqua nelle cazzaròle"} means “Put the water in the pots".
+
+    \RaggedRight
+    \textbf{\textit{Ce st’á fètt?}} $\ \rightarrow \ $ \textit{What’s wrong with you?} \\
+    \justifying
+    It is used humorously when someone is acting strangely, like \textit{"Uagliò, c’ se’ fètt?"}, which means "What's causing you to feel unwell?".
+
+    \RaggedRight
+    \textbf{\textit{Ch’ la fèscia?}} $\ \rightarrow \ $ \textit{What are you doing?} \\
+    \justifying
+    This expression is often used in a playful manner to ask someone what they're up to, like \textit{"Ehi, ch’ la fèscia?"}.
+
+    \RaggedRight
+    \textbf{\textit{Che scamàgne!}} $\ \rightarrow \ $ \textit{What a mess!} \\
+    \justifying
+    Used when something is chaotic or disorganized, e.g., \textit{"La tua stanza è un scamàgne!"}.
+
+    \RaggedRight
+    \textbf{\textit{Chiùne}} $\ \rightarrow \ $ \textit{To snore} \\
+    \justifying
+    Used to describe someone snoring loudly. If you share a room and your roommate snores, you might say, \textit{"Uà, chiùne come 'nu trattore!"}, which means "Wow, he snores like a tractor!".
+
+    \RaggedRight
+    \textbf{\textit{Dambònde}} $\ \rightarrow \ $ \textit{Over there} \\
+    \justifying
+    Dambònde means that it’s right over there. So, if you’re looking for the bathroom and you’re in a restaurant in Bari you’ll probably hear the waiter tell you \textit{“Dambònde"}, as in it’s down there.
+
+    \RaggedRight
+    \textbf{\textit{Fèsse}} $\ \rightarrow \ $ \textit{Idiot} \\
+    \justifying
+    A mildly derogatory term used to call someone an idiot or a fool. It’s often used among friends in a teasing manner, like \textit{"Ah, uagliò, si proprie 'nu fèsse!"} meaning “Ah, dude, you’re such an idiot!".
+
+    \RaggedRight
+    \textbf{\textit{M’ha fatt’ murì}} $\ \rightarrow \ $ \textit{You’ve killed me (with laughter)!} \\
+    \justifying
+    This expression literally means "You’ve killed me". It is used when someone makes you laugh a lot, like \textit{"M’ha fatt’ murì con quella battuta!"}, meaning "You made me laugh a lot".
+
+    \RaggedRight
+    \textbf{\textit{Mannile}} $\ \rightarrow \ $ \textit{Towel} \\
+    \justifying
+    So, you’re down south and you want to go to the beach but you don’t know how to ask for one? Go with “Asciugamano" first (the towel), but they might answer with \textit{“aaaaaah un mannile?”}.
+\end{multicols}
+\end{adjustwidth}
+
+\begin{adjustwidth}{10pt}{20pt}
+\begin{multicols}{2}
+    \RaggedRight
+    \textbf{\textit{Mbrugghià}} $\ \rightarrow \ $ \textit{To cheat} \\
+    \justifying
+    Often used in the context of games or relationships, e.g., \textit{"Non mbrugghià"}, which means "Please don’t cheat, play fair".
+
+    % \RaggedRight
+    % \textbf{\textit{Madò}} $\ \rightarrow \ $ \textit{Wow!/Incredible!} \\
+    % \justifying
+    % It is an exclamation widely used for any expression of surprise (positive or negative).
+
+    \RaggedRight
+    \textbf{\textit{Mò}} $\ \rightarrow \ $ \textit{Now} \\
+    \justifying
+    It literally means "now". For example, when you ask someone "When do I have to do this thing?", and he/she answer you "right now", he/she could says \textit{"Mò!"}.
+
+    \RaggedRight
+    \textbf{\textit{Moh}} $\ \rightarrow \ $ \textit{Wow!/Incredible!} \\
+    \justifying
+    \textit{Moh}, which is not to be confused with \textit{Mò}, is used as an inter-layer for any expression of surprise (positive or negative).
+
+    \RaggedRight
+    \textbf{\textit{Non tene cè ffà!}} $\ \rightarrow \ $  \textit{Someone who has nothing to do} \\
+    \justifying
+    You got one of those lazy friends that needs a little pep talk, go in straight-faced, and start shouting in Barese to them. Drop-in a \textit{“Non tene cè ffà!"}, so you’ll scare him straight into being less lazy.
+
+    \RaggedRight
+    \textbf{\textit{Nuje}} $\ \rightarrow \ $ \textit{We/Us} \\
+    \justifying
+    This is a colloquial way to say "we" or "us" in Bari, as well all around Puglia. For example, \textit{"Nuje amma sci’ a mare"} means \textit{We are going to the beach.}
+    
+    \RaggedRight
+    \textbf{\textit{Nz’è manghiàte}} $\ \rightarrow \ $ \textit{He/She didn’t eat} \\
+    \justifying
+    This phrase is used when someone hasn't eaten. For example, if you're concerned about a friend, you might say, \textit{"Nz’è manghiàte tutta la giornata!"}.
+
+    % \RaggedRight
+    % \textbf{\textit{Pèdde}} $\ \rightarrow \ $ \textit{Skin} \\
+    % \justifying
+    % It is used to describe the skin or peel (of a fruit), e.g., \textit{"la pèdde della frutta"} means “the fruit's skin/peel".
+
+    \RaggedRight
+    \textbf{\textit{Sbrindulèt}} $\ \rightarrow \ $ \textit{Clumsy person} \\
+    \justifying
+    A playful term for someone who is always clumsy. It’s used to tease a friend or family member who is accident-prone. For example, if your friend keeps knocking over their drink, you could say, \textit{"Sei un vero sbrindulèt!"} meaning "You're such a clumsy person!".
+
+    \RaggedRight
+    \textbf{\textit{Scè}} $\ \rightarrow \ $ \textit{Come on} \\
+    \justifying
+    It is an expression of encouragement or disbelief, e.g., \textit{"Scè, non ci credo!"} letterally means "Come on, I don’t believe it!".
+
+    \RaggedRight
+    \textbf{\textit{Sciatà}} $\ \rightarrow \ $ \textit{To rest} \\
+    \justifying
+    Thi expression is perfect for those lazy afternoons. After a very heavy lunch, you can say \textit{"Dopo pranzo mi voglio sciatà"} which means "After lunch, I want to rest".
+
+    \RaggedRight
+    \textbf{\textit{Sciuscià}} $\ \rightarrow \ $ \textit{To stroll around} \\
+    \justifying
+    This term means to take a leisurely walk, often without a specific destination. It's perfect for describing a relaxed evening walk along the seafront.
+
+    \RaggedRight
+    \textbf{\textit{Stràcquate}} $\ \rightarrow \ $ \textit{Exhausted} \\
+    \justifying
+    When you're extremely tired (maybe after a hard walking), you can say \textit{"Sono stràcquate"} meaning "I’m very exhausted after this walk".
+    
+    \RaggedRight
+    \textbf{\textit{Uagnèdde}} $\ \rightarrow \ $ \textit{Young girl} \\
+    \justifying
+    It represents an affectionate term for a young girl: \textit{"Quidde uagnèdde è proprio simpatica!"} means "That young girl is really nice!".
+
+    \RaggedRight
+    \textbf{\textit{Uagliò}} $\ \rightarrow \ $ \textit{Dude/Bro} \\
+    \justifying
+    This is a term of endearment or casual address for a friend, similar to \textit{"dude"} or \textit{"bro"} in English. You might hear it among friends at a café or bar.
+
+    \RaggedRight
+    \textbf{\textit{Uè mà!}} $\ \rightarrow \ $ \textit{Hey, buddy!} \\
+    \justifying
+    This is a friendly greeting among friends, similar to “Hey, man!”, \textit{"Uè mà, tutto appòste?"}.
+    
+    % \RaggedRight
+    % \textbf{\textit{Taratatà}} $\ \rightarrow \ $ \textit{Bla bla bla} \\
+    % \justifying
+    % Taratatà is used to imitate someone who talks too much. For example, \textit{"Tutto il tempo, taratatà, non si ferma mai!"} stays for "All the time, blah blah blah, he never stops!".
+    
+    \RaggedRight
+    \textbf{\textit{Vattinne và!}} $\ \rightarrow \ $ \textit{Come oon!/Suuure!/Get out of here!} \\
+    \justifying
+    This one is pretty much universal in southern Italy. You’ll hear this when someone says some tall tale that is in no way real. It literally means "get out of here", but it’s to be interpreted as the Sopranos style \textit{"Geeet out a’heeeere!"}.
+
+    \RaggedRight
+    \textbf{\textit{Vamm’bràje!}} $\ \rightarrow \ $ \textit{Leave me alone!} \\
+    \justifying
+    This expression is used when you want someone to stop bothering you. For instance, if a street vendor keeps pestering you to buy something, you can say, \textit{"Vamm’bràje!"}.
+\end{multicols}
+\end{adjustwidth}
+
+
+
+
+\chapter{List of Contributions}
+\input{papers.tex}
+
+%----------------------------------------------------------------------------------------
+%	 NOTES
+%----------------------------------------------------------------------------------------
+\chapter*{Notes}
+\includegraphics[width=\textwidth]{notes/notes-initial.pdf}
+
+\newpage
+\includegraphics[width=\textwidth]{notes/notes-rest.pdf}
+
+\newpage
+\includegraphics[width=\textwidth]{notes/notes-rest.pdf}
+
+\newpage
+\includegraphics[width=\textwidth]{notes/notes-rest.pdf}
+
+% \newpage
+% \includegraphics[width=\textwidth]{notes/notes-rest.pdf}
+
+\includepdf{images/case25-flyer.pdf} 
+\newpage
+
+~\vfill % Push text down
+
+\begin{center}
+
+\includegraphics[width=0.25\linewidth]{logos/cic.jpg}
+
+\textbf{ORGANIZING SECRETARIAT}
+
+CENTRO ITALIANO CONGRESSI CIC SUD SRL
+
+VIALE ESCRIVA’ 28 70124 BARI (Italy)
+
++390805043737 | info@cicsud.it
+
+\url{www.cicsud.it}
+\end{center}
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	 CLOSING PAGE
+%----------------------------------------------------------------------------------------
+
+
+\thispagestyle{empty} % Suppress headers and footers on this page
+\pagecolor{myblue} % Coloured background
+~
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
