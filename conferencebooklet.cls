@@ -204,31 +204,31 @@
 \usepackage[scale=1, angle=0, opacity=1]{background}
 \backgroundsetup{contents={}}
 
-\AddEverypageHook{%
-	\ifthenelse{%
-		\isodd{\thepage} \AND \thepage>1 \AND \NOT \thepage=\pageref{LastPage} % If odd page but not the first or last page
-	}{%
-		\backgroundsetup{
-			color=\secondarycolor, % Bar colour
-			position=current page.south east, % Position of the bar on the page
-			nodeanchor=south east, % Anchor location inside the bar
-			contents={\rule{10pt}{0.66\paperheight}} % Bar width and height
-			}
-	}{}
-	%
-	\ifthenelse{% 
-		\NOT \isodd{\thepage} \AND \NOT \thepage=\pageref{LastPage} % If even page but not the last page
-	}{%
-		\backgroundsetup{
-			color=\secondarycolor, % Bar colour
-			position=current page.south west, % Position of the bar on the page
-			nodeanchor=south west, % Anchor location inside the bar
-			contents={\rule{10pt}{0.66\paperheight}} % Bar width and height
-			}
-	}{}
-	%
-	\BgMaterial % Output the background set up above
-}
+% \AddEverypageHook{%
+% 	\ifthenelse{%
+% 		\isodd{\thepage} \AND \thepage>1 \AND \NOT \thepage=\pageref{LastPage} % If odd page but not the first or last page
+% 	}{%
+% 		\backgroundsetup{
+% 			color=\secondarycolor, % Bar colour
+% 			position=current page.south east, % Position of the bar on the page
+% 			nodeanchor=south east, % Anchor location inside the bar
+% 			contents={\rule{10pt}{0.66\paperheight}} % Bar width and height
+% 			}
+% 	}{}
+% 	%
+% 	\ifthenelse{% 
+% 		\NOT \isodd{\thepage} \AND \NOT \thepage=\pageref{LastPage} % If even page but not the last page
+% 	}{%
+% 		\backgroundsetup{
+% 			color=\secondarycolor, % Bar colour
+% 			position=current page.south west, % Position of the bar on the page
+% 			nodeanchor=south west, % Anchor location inside the bar
+% 			contents={\rule{10pt}{0.66\paperheight}} % Bar width and height
+% 			}
+% 	}{}
+% 	%
+% 	\BgMaterial % Output the background set up above
+% }
 
 %----------------------------------------------------------------------------------------
 %	TALK TYPE CIRCLE DEFINITIONS

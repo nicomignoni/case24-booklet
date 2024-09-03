@@ -57,6 +57,9 @@
 
 \includepdf{images/Frontpage.pdf} % The cover for the booklet is included as a whole-page image, it can be a PDF or an image file but must be the same dimensions as the paper size
 
+\newpage
+
+
 %----------------------------------------------------------------------------------------
 %	 INFORMATION/COPYRIGHT PAGE
 %----------------------------------------------------------------------------------------
@@ -76,12 +79,27 @@
 \end{center}
 
 \newpage
+\thispagestyle{empty} % Suppress headers and footers on this page
+~
+
+\newpage
+\thispagestyle{empty} % Suppress headers and footers on this page
+~
+
+\newpage
+
+\newpage
+
 
 %----------------------------------------------------------------------------------------
 %	 TABLE OF CONTENTS
 %----------------------------------------------------------------------------------------
 
 \tableofcontents
+
+\newpage
+\thispagestyle{empty} % Suppress headers and footers on this page
+~
 
 %----------------------------------------------------------------------------------------
 %	 ABOUT CONFERENCE
@@ -97,7 +115,9 @@ CASE 2024 is already a resounding success, drawing more than 900 participants fr
 
 This year, we introduced a Call for Application Video for the first time, receiving more than 80 submissions. In line with our commitment to diversity and inclusion, CASE 2024 also featured a new Call for Diversity and Inclusion Activities, encouraging proposals that broaden participation in automation science and engineering and encompass various dimensions of diversity.
 
-Besides the traditional awards such as the \textit{Best Conference Paper Award},\textit{ Best Application Paper Award}, \textit{Best Student Paper Award}, and the Best Healthcare Automation Paper Award, we are proud to present for the second time the \textit{Peter Luh Memorial Best Paper Award for Young Researcher}, which has now become an official IEEE award. This award was established in honor of Professor Peter Luh's dedicated service to raising the profile of automation and supporting young researchers early in their careers. This year, the conference also established the \textit{Best Short Paper Award} and the \textit{Best Application Video Award}.
+Besides the traditional awards such as the \textit{Best Conference Paper Award},\textit{Best Application Paper Award}, \textit{Best Student Paper Award}, and the Best Healthcare Automation Paper Award, we are proud to present for the second time the \textit{Peter Luh Memorial Best Paper Award for Young Researcher}, which has now become an official IEEE award. This award was established in honor of Professor Peter Luh's dedicated service to raising the profile of automation and supporting young researchers early in their careers. This year, the conference also established the \textit{Best Short Paper Award} and the \textit{Best Application Video Award}. This year the \textit{IEEE T-ASE Best Paper Award} and \textit{IEEE T-ASE Best Application Paper Award} will be presented at CASE.
+
+
 
 Several opportunities were available this year to participants. RAS established the traditional Travel Support, Social Media Ambassador, and IDEA Travel Support. This year, we introduced several new opportunities. We sent out a call for Student Volunteers, providing 15 students from all around the globe with the opportunity to participate in the conference for free. 
 Furthermore, we are thrilled to introduce the RAS Member Support Program (MSP) for CASE for the first time. This program aims to provide financial support to members who contribute to activities aligned with the RAS mission. The MSP offers a significant discount on registration fees. Additionally, we are pleased to offer onsite childcare support to facilitate parents' participation, with discounted options for IEEE RAS members.
@@ -141,11 +161,11 @@ Overall, CASE has grown from a niche event to a key global forum that shapes the
 
 Since CASE 2024 is the 20th CASE conference, this anniversary will be celebrated at the conference through different events, including videos and presentations. We will hear how CASE was initiated and get short memories from the former conferences in Edmonton 2005, Shanghai 2006, Scottsdale 2007, Arlington 2008, Bangalore 2009, Toronto 2010, Trieste 2011, Seoul 2012, Madison 2013, Taipei 2014, Gothenburg 2015, Fort Worth 2016, Xi’an 2017, Munich 2018, Vancouver 2019, Hong Kong 2020, Lyon 2021, Mexico City 2022, and Auckland 2023. Some statistics will also confirm the conference's growth, for instance, the increase by a factor of seven in the number of papers from the first CASE conference to this year’s CASE in Bari.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{images/map.png}
-    % \caption{Enter Caption}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=\linewidth]{images/map.png}
+%     % \caption{Enter Caption}
+% \end{figure}
 
 \newpage
 
@@ -496,6 +516,10 @@ Since CASE 2024 is the 20th CASE conference, this anniversary will be celebrated
     \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/beckhoff.png}\hspace*{\fill}
     
     \textit{Beckhoff is a German company known for its PC-based automation solutions, integrating open automation systems for machine building, manufacturing, and building automation. The company emphasizes innovation, flexibility, and high performance in its products.} \\
+
+    \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/bionit.jpg}\hspace*{\fill}
+    
+    \textit{BionIT Labs is an Italian medtech company specializing in the development of innovative prosthetic devices. The company combines advanced technology with user-centered design to create highly functional and intuitive solutions that improve the quality of life for individuals with limb loss.} \\
 
     \hfill\includegraphics[width=\sponsorscaling\linewidth]{logos/e80.png}\hspace*{\fill}
 
@@ -1527,12 +1551,14 @@ The detailed CASE 2024 programme including papers, paper presentations and virtu
             Farewell: \textit{31 August, 20:00 – 21:00} \vspace{2mm} \\ 
             \textit{Included in the (in-person) full and student registration fees}
             \vspace{2mm} \\
-            Join us at the rooftop of Nicolaus Hotel for the Welcome and Farewell Ceremonies. You will enjoy a stunning view of the entire town while indulging in delicious typical Apulian foods. It’s a perfect setting to connect with fellow participants. \\ \\
+            Join us for the Welcome and Farewell Ceremonies. You will enjoy nice moments while indulging in delicious typical Apulian foods. It’s a perfect setting to connect with fellow participants.
+            \\ \\
 
             \parbox{75mm}{\section{Gala Dinner}} \vspace{1mm} \\
-            \textit{30 August, Corte di Torrelonga, 20:00 – 21:30} \vspace{2mm} \\
+            \textit{30 August, Corte di Torrelonga, 20:00 – 23:30} \vspace{2mm} \\
             \textit{Included in the (in-person) full and student registration fees} \vspace{2mm} \\
-            Indulge in an evening of elegance and opulence at the prestigious Villa de Grecis, an old Italian Villa — delight in fine dining, entertainment, and camaraderie within the historic walls of this enchanting venue. Transportation service is included. \\ \\ 
+            Indulge in an evening of elegance at an old Italian Villa — delight in fine dining, entertainment, and camaraderie within the historic walls of this enchanting venue. Transportation service is included.
+            \\ \\ 
 
             \parbox{75mm}{\section{Sightseeing tour of Bari}} \\
             \textit{30 August, 15:30 – 20:00} \vspace{2mm} \\ 
@@ -2826,37 +2852,50 @@ These unique expressions offer you a glimpse into the rich cultural tapestry of 
 \newpage
 \includegraphics[width=\textwidth]{notes/notes-rest.pdf}
 
-\newpage
-\includegraphics[width=\textwidth]{notes/notes-rest.pdf}
+% \newpage
+% \includegraphics[width=\textwidth]{notes/notes-rest.pdf}
+
+% \newpage
+% \includegraphics[width=\textwidth]{notes/notes-rest.pdf}
+
+% \newpage
+% \includegraphics[width=\textwidth]{notes/notes-rest.pdf}
+
 
 % \newpage
 % \includegraphics[width=\textwidth]{notes/notes-rest.pdf}
 
 \includepdf{images/case25-flyer.pdf} 
-\newpage
 
+\newpage
+\thispagestyle{empty} % Suppress headers and footers on this page
+
+\newpage
 ~\vfill % Push text down
+
+\newpage
+~\vfill % Push text down
+\thispagestyle{empty} % Suppress headers and footers on this page
 
 \begin{center}
 
-\includegraphics[width=0.25\linewidth]{logos/cic.jpg}
+\includegraphics[width=0.25\linewidth]{logos/CIC-30anni-Fondo-scuro.png}
 
-\textbf{ORGANIZING SECRETARIAT}
+\textcolor{white}{\textbf{ORGANIZING SECRETARIAT}}
 
-CENTRO ITALIANO CONGRESSI CIC SUD SRL
+\textcolor{white}{CENTRO ITALIANO CONGRESSI CIC SUD SRL}
 
-VIALE ESCRIVA’ 28 70124 BARI (Italy)
+\textcolor{white}{VIALE ESCRIVA’ 28 70124 BARI (Italy)}
 
-+390805043737 | info@cicsud.it
+\textcolor{white}{+390805043737 | info@cicsud.it}
 
-\url{www.cicsud.it}
+\textcolor{white}{\url{www.cicsud.it}}
 \end{center}
-
-\newpage
 
 %----------------------------------------------------------------------------------------
 %	 CLOSING PAGE
 %----------------------------------------------------------------------------------------
+
 
 
 \thispagestyle{empty} % Suppress headers and footers on this page
